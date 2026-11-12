@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080b13">
 <title>Elite Game Market</title>
+
 <style>
 *{box-sizing:border-box}
 body{
@@ -34,22 +35,26 @@ transition:transform .12s
 }
 button:active{transform:scale(.97)}
 button span{display:block;font-size:29px;margin-bottom:8px}
-.gold{background:linear-gradient(135deg,#79500a,#d69b12 55%,#573700);border-color:#ffd34e}
+.gold{background:linear-gradient(135deg,#79500a,#d69b12 55%,#573700);border-color:#ffd34e;box-shadow:0 0 17px #eebc2b55}
 .green{background:linear-gradient(135deg,#07522b,#08a94d 55%,#06401f);border-color:#37ff83}
 .purple{background:linear-gradient(135deg,#40105e,#941bd0 55%,#32064f);border-color:#e25bff}
 .blue{background:linear-gradient(135deg,#073b75,#087bd5 55%,#062c60);border-color:#45baff}
 .gray{background:linear-gradient(135deg,#202a38,#465365 55%,#151c28);border-color:#9ca9bb}
 .red{background:linear-gradient(135deg,#650d18,#d51b2b 55%,#4c0810);border-color:#ff5965}
-.panel{display:none;margin-top:20px;padding:20px;border-radius:18px;background:#151d2a;border:1px solid #4b5362;line-height:1.6}
+.panel{
+display:none;margin-top:20px;padding:20px;border-radius:18px;
+background:#151d2a;border:1px solid #4b5362;line-height:1.6
+}
 .panel h2{color:#f7d77b;margin-top:0}
 .panel button{min-height:48px;width:100%;margin-top:10px}
-.panel a{color:#f7d77b}
 footer{text-align:center;color:#8490a3;font-size:12px;margin-top:22px}
 @media(max-width:360px){button{font-size:14px;min-height:92px}}
 </style>
 </head>
+
 <body>
 <div class="wrap">
+
 <header>
 <div class="crown">👑</div>
 <h1>ELITE GAME MARKET</h1>
@@ -67,6 +72,7 @@ footer{text-align:center;color:#8490a3;font-size:12px;margin-top:22px}
 </div>
 
 <section class="panel" id="panel"></section>
+
 <footer>✦ ELITE • SECURE • PREMIUM ✦</footer>
 </div>
 
@@ -99,35 +105,33 @@ language:[
 ],
 help:[
 '🛡️ Yordam',
-'<a href="https://t.me/toliboevv" onclick="openAdmin(event)">✉️ ADMIN BILAN BOG‘LANISH — @toliboevv</a>',
+'<button onclick="openAdmin()">✉️ ADMIN BILAN BOG‘LANISH — @toliboevv</button>',
 ''
 ]
 };
 
-function openAdmin(event){
-event.preventDefault();
-const url='https://t.me/toliboevv';
-if(window.Telegram && window.Telegram.WebApp){
-window.Telegram.WebApp.openTelegramLink(url);
-}else{
-window.location.href=url;
-}
+function openAdmin(){
+window.open('https://t.me/toliboevv','_blank');
 }
 
 function show(key){
 const p=document.getElementById('panel');
 const d=content[key];
+
 p.innerHTML='<h2>'+d[0]+'</h2><div>'+d[1]+'</div>'+d[2];
 
 const back=document.createElement('button');
 back.className='gray';
 back.textContent='⬅ ORQAGA';
-back.onclick=function(){p.style.display='none';};
+back.onclick=function(){
+p.style.display='none';
+};
+
 p.appendChild(back);
 p.style.display='block';
 p.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 </script>
+
 </body>
 </html>
-
