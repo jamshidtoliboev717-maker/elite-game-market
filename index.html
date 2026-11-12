@@ -1,30 +1,109 @@
 
+<!
 <!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090d16">
 <title>ELITE GAME MARKET</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#090d16;color:white;font-family:Arial,sans-serif}
-header{text-align:center;padding:25px 10px;background:#151b29;border-bottom:2px solid #d5a52b}
+body{
+margin:0;
+background:#090d16;
+color:white;
+font-family:Arial,sans-serif;
+}
+header{
+text-align:center;
+padding:25px 10px;
+background:#151b29;
+border-bottom:2px solid #d5a52b;
+}
 h1{color:#e8bd50;margin:0;font-size:25px}
 header p{color:#aaa;font-size:12px}
-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:15px}
-button{border:1px solid #b98b2c;background:#171f30;color:#f4ce6b;padding:14px;border-radius:10px;font-weight:bold;font-size:14px}
+nav{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+padding:15px;
+}
+button{
+border:1px solid #b98b2c;
+background:#171f30;
+color:#f4ce6b;
+padding:13px;
+border-radius:10px;
+font-weight:bold;
+font-size:14px;
+cursor:pointer;
+}
 button:active{opacity:.7}
 #content{padding:15px}
 h2{color:#f4ce6b}
-.card{background:#151d2c;border:1px solid #333d50;padding:15px;border-radius:12px;margin:12px 0}
-.price{color:#f4ce6b;font-size:20px;font-weight:bold}
-.small{font-size:12px;color:#aaa}
+.notice{
+background:#382c14;
+color:#ffdc82;
+padding:12px;
+border-radius:9px;
+font-size:12px;
+margin-bottom:15px;
+}
+.game-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin:15px 0;
+}
+.game-card{
+padding:0;
+overflow:hidden;
+border-radius:14px;
+background:#171f30;
+color:#f4ce6b;
+width:100%;
+}
+.game-card img{
+width:100%;
+height:190px;
+object-fit:cover;
+display:block;
+}
+.game-card span{
+display:block;
+padding:14px 5px;
+font-size:14px;
+}
+.card{
+background:#151d2c;
+border:1px solid #333d50;
+padding:15px;
+border-radius:12px;
+margin:12px 0;
+}
+.price{
+color:#f4ce6b;
+font-size:20px;
+font-weight:bold;
+}
 .back{margin-top:12px;width:100%}
-.notice{background:#382c14;color:#ffdc82;padding:12px;border-radius:9px;font-size:12px}
+input{
+width:100%;
+padding:12px;
+margin:7px 0;
+border-radius:8px;
+border:1px solid #555;
+background:#101827;
+color:white;
+}
 </style>
 </head>
+
 <body>
+
 <header>
 <h1>👑 ELITE GAME MARKET</h1>
 <p>PUBG MOBILE • FREE FIRE</p>
@@ -40,53 +119,79 @@ h2{color:#f4ce6b}
 </nav>
 
 <div id="content">
-<div class="notice">DEMO REJIMI: bu sinov do‘koni. Haqiqiy pul olinmaydi va akkaunt sotilmaydi.</div>
-<h2>Elite Game Marketga xush kelibsiz!</h2>
-O‘yin turini tanlab, demo katalogni ko‘ring.
+<div class="notice">DEMO REJIMI: haqiqiy pul olinmaydi.</div>
+<h2>🎮 O‘yin turini tanlang</h2>
+<div class="game-grid">
+<button class="game-card" onclick="catalog('PUBG MOBILE')">
+<img src="https://placehold.co/500x650/172238/ffffff?text=PUBG+MOBILE" alt="PUBG">
+<span>🎮 PUBG MOBILE</span>
+</button>
+<button class="game-card" onclick="catalog('FREE FIRE')">
+<img src="https://placehold.co/500x650/302018/ffffff?text=FREE+FIRE" alt="Free Fire">
+<span>🔥 FREE FIRE</span>
+</button>
+</div>
 </div>
 
 <script>
 const content=document.getElementById("content");
 
+function home(){
+content.innerHTML=`
+<div class="notice">DEMO REJIMI: haqiqiy pul olinmaydi.</div>
+<h2>🎮 O‘yin turini tanlang</h2>
+${gameButtons()}`;
+}
+
+function gameButtons(){
+return `
+<div class="game-grid">
+<button class="game-card" onclick="catalog('PUBG MOBILE')">
+<img src="https://placehold.co/500x650/172238/ffffff?text=PUBG+MOBILE" alt="PUBG">
+<span>🎮 PUBG MOBILE</span>
+</button>
+<button class="game-card" onclick="catalog('FREE FIRE')">
+<img src="https://placehold.co/500x650/302018/ffffff?text=FREE+FIRE" alt="Free Fire">
+<span>🔥 FREE FIRE</span>
+</button>
+</div>`;
+}
+
 function show(key){
 if(key==="buy"){
-content.innerHTML=`
-<h2>🛒 O‘yin turini tanlang</h2>
-<button onclick="catalog('PUBG MOBILE')">🎮 PUBG MOBILE</button>
-<button onclick="catalog('FREE FIRE')">🔥 FREE FIRE</button>
-<button class="back" onclick="home()">⬅ ORQAGA</button>`;
+home();
 }
 else if(key==="sell"){
 content.innerHTML=`
 <h2>💰 Akkaunt sotish</h2>
-<div class="notice">Demo rejimi: bu yerda haqiqiy e'lon joylanmaydi.</div>
-<input id="game" placeholder="O‘yin nomi" style="padding:12px;width:100%;margin:10px 0">
-<input id="name" placeholder="Akkaunt nomi" style="padding:12px;width:100%">
-<button class="back" onclick="alert('Demo: e’lon saqlanmadi')">E'LONNI KO‘RISH</button>
+<div class="notice">Demo: e’lon haqiqiy joylanmaydi.</div>
+<input id="game" placeholder="PUBG yoki Free Fire">
+<input id="name" placeholder="Akkaunt nomi">
+<input id="price" placeholder="Narxi">
+<button onclick="alert('Demo: e’lon saqlanmadi')">E'LONNI KO‘RISH</button>
 <button class="back" onclick="home()">⬅ ORQAGA</button>`;
 }
 else if(key==="premium"){
-content.innerHTML=`<h2>⭐ PREMIUM</h2><p>Premium bo‘limi tez orada.</p><button onclick="home()">⬅ ORQAGA</button>`;
+content.innerHTML=`<h2>⭐ PREMIUM</h2><p>Tez orada.</p><button onclick="home()">⬅ ORQAGA</button>`;
 }
 else if(key==="profile"){
-content.innerHTML=`<h2>👤 PROFIL</h2><p>Demo profil</p><button onclick="home()">⬅ ORQAGA</button>`;
+content.innerHTML=`<h2>👤 PROFIL</h2><p>Demo profil.</p><button onclick="home()">⬅ ORQAGA</button>`;
 }
 else if(key==="language"){
-content.innerHTML=`<h2>🌐 TIL</h2><button onclick="alert('O‘zbek tili tanlandi')">🇺🇿 O‘zbekcha</button><button onclick="home()">⬅ ORQAGA</button>`;
+content.innerHTML=`<h2>🌐 TIL</h2><button onclick="alert('O‘zbek tili tanlandi')">🇺🇿 O‘zbekcha</button><button class="back" onclick="home()">⬅ ORQAGA</button>`;
 }
 else if(key==="help"){
-content.innerHTML=`<h2>🛡️ Yordam</h2><button onclick="openAdmin()">✉️ ADMIN BILAN BOG‘LANISH — @toliboevv</button><button class="back" onclick="home()">⬅ ORQAGA</button>`;
+content.innerHTML=`
+<h2>🛡️ Yordam</h2>
+<button onclick="openAdmin()">✉️ ADMIN — @toliboevv</button>
+<button class="back" onclick="home()">⬅ ORQAGA</button>`;
 }
-}
-
-function home(){
-content.innerHTML=`<div class="notice">DEMO REJIMI: haqiqiy pul olinmaydi.</div><h2>Elite Game Market</h2>O‘yin turini tanlang.`;
 }
 
 function catalog(game){
 content.innerHTML=`
 <h2>${game} katalogi</h2>
-<div class="notice">Bular namunaviy mahsulotlar. Haqiqiy akkauntlar emas.</div>
+<div class="notice">Namunaviy akkauntlar. Haqiqiy akkaunt emas.</div>
 <div class="card">
 <h3>🎮 ${game} — DEMO 01</h3>
 <p>Namunaviy akkaunt</p>
@@ -99,14 +204,14 @@ content.innerHTML=`
 <p class="price">80 000 so‘m</p>
 <button onclick="checkout('${game}','DEMO 02')">SOTIB OLISH</button>
 </div>
-<button class="back" onclick="show('buy')">⬅ ORQAGA</button>`;
+<button class="back" onclick="home()">⬅ ORQAGA</button>`;
 }
 
 function checkout(game,item){
 content.innerHTML=`
 <h2>🧾 Demo buyurtma</h2>
 <div class="card">${game}<br>${item}</div>
-<div class="notice">Sinov rejimi. Payme yoki Uzum orqali haqiqiy to‘lov amalga oshirilmaydi.</div>
+<div class="notice">Sinov rejimi. Haqiqiy pul olinmaydi.</div>
 <h3>To‘lov usulini tanlang:</h3>
 <button onclick="demoPay('Payme')">Payme DEMO</button>
 <button onclick="demoPay('Uzum')">Uzum DEMO</button>
@@ -115,7 +220,7 @@ content.innerHTML=`
 
 function demoPay(method){
 content.innerHTML=`
-<h2>✅ Demo sinov yakunlandi</h2>
+<h2>✅ Demo sinov</h2>
 <div class="card">
 To‘lov usuli: ${method}<br>
 Holat: DEMO<br>
