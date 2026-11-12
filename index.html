@@ -1,114 +1,128 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080b13">
-<title>Elite Game Market</title>
-
+<title>ELITE GAME MARKET</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
 *{box-sizing:border-box}
-body{
-margin:0;min-height:100vh;
-background:radial-gradient(circle at 50% 0,#25203b 0,#0b101b 48%,#05070c 100%);
-color:#fff;font-family:Arial,sans-serif;padding:22px 16px 35px
-}
-.wrap{max-width:520px;margin:auto}
-header{
-text-align:center;padding:24px 12px 28px;
-border:1px solid #70551d;border-radius:22px;
-background:linear-gradient(145deg,#171d2a,#090d15);
-box-shadow:0 0 25px #d7a52b22
-}
-.crown{font-size:42px}
-h1{font-size:25px;letter-spacing:1px;color:#f7d77b;margin:8px 0}
-.sub{color:#c5cad5;font-size:13px;letter-spacing:1.5px}
-.tag{margin-top:17px;color:#e8d6a0;font-size:14px;line-height:1.6}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px}
-button{
-min-height:104px;border:1px solid transparent;border-radius:18px;
-color:white;font-weight:800;font-size:16px;letter-spacing:.4px;
-background:#171d2a;cursor:pointer;
-box-shadow:inset 0 1px 0 #ffffff22,0 8px 18px #0008;
-transition:transform .12s
-}
-button:active{transform:scale(.97)}
-button span{display:block;font-size:29px;margin-bottom:8px}
-.gold{background:linear-gradient(135deg,#79500a,#d69b12 55%,#573700);border-color:#ffd34e;box-shadow:0 0 17px #eebc2b55}
-.green{background:linear-gradient(135deg,#07522b,#08a94d 55%,#06401f);border-color:#37ff83}
-.purple{background:linear-gradient(135deg,#40105e,#941bd0 55%,#32064f);border-color:#e25bff}
-.blue{background:linear-gradient(135deg,#073b75,#087bd5 55%,#062c60);border-color:#45baff}
-.gray{background:linear-gradient(135deg,#202a38,#465365 55%,#151c28);border-color:#9ca9bb}
-.red{background:linear-gradient(135deg,#650d18,#d51b2b 55%,#4c0810);border-color:#ff5965}
-.panel{
-display:none;margin-top:20px;padding:20px;border-radius:18px;
-background:#151d2a;border:1px solid #4b5362;line-height:1.6
-}
-.panel h2{color:#f7d77b;margin-top:0}
-.panel button{min-height:48px;width:100%;margin-top:10px}
-footer{text-align:center;color:#8490a3;font-size:12px;margin-top:22px}
-@media(max-width:360px){button{font-size:14px;min-height:92px}}
+body{margin:0;background:#090d16;color:white;font-family:Arial,sans-serif}
+header{text-align:center;padding:25px 10px;background:#151b29;border-bottom:2px solid #d5a52b}
+h1{color:#e8bd50;margin:0;font-size:25px}
+header p{color:#aaa;font-size:12px}
+nav{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:15px}
+button{border:1px solid #b98b2c;background:#171f30;color:#f4ce6b;padding:14px;border-radius:10px;font-weight:bold;font-size:14px}
+button:active{opacity:.7}
+#content{padding:15px}
+h2{color:#f4ce6b}
+.card{background:#151d2c;border:1px solid #333d50;padding:15px;border-radius:12px;margin:12px 0}
+.price{color:#f4ce6b;font-size:20px;font-weight:bold}
+.small{font-size:12px;color:#aaa}
+.back{margin-top:12px;width:100%}
+.notice{background:#382c14;color:#ffdc82;padding:12px;border-radius:9px;font-size:12px}
 </style>
 </head>
-
 <body>
-<div class="wrap">
-
 <header>
-<div class="crown">👑</div>
-<h1>ELITE GAME MARKET</h1>
-<div class="sub">PUBG MOBILE • FREE FIRE</div>
-<div class="tag">💎 PREMIUM ACCOUNT MARKET<br>Kerakli bo‘limni tanlang</div>
+<h1>👑 ELITE GAME MARKET</h1>
+<p>PUBG MOBILE • FREE FIRE</p>
 </header>
 
-<div class="grid">
-<button class="gold" onclick="show('buy')"><span>🛒</span>SOTIB OLISH</button>
-<button class="green" onclick="show('sell')"><span>💰</span>SOTISH</button>
-<button class="purple" onclick="show('premium')"><span>👑</span>PREMIUM</button>
-<button class="blue" onclick="show('profile')"><span>👤</span>PROFIL</button>
-<button class="gray" onclick="show('language')"><span>🌐</span>TIL</button>
-<button class="red" onclick="show('help')"><span>🛡️</span>YORDAM</button>
-</div>
+<nav>
+<button onclick="show('buy')">🛒 SOTIB OLISH</button>
+<button onclick="show('sell')">💰 SOTISH</button>
+<button onclick="show('premium')">⭐ PREMIUM</button>
+<button onclick="show('profile')">👤 PROFIL</button>
+<button onclick="show('language')">🌐 TIL</button>
+<button onclick="show('help')">🛡️ YORDAM</button>
+</nav>
 
-<section class="panel" id="panel"></section>
-
-<footer>✦ ELITE • SECURE • PREMIUM ✦</footer>
+<div id="content">
+<div class="notice">DEMO REJIMI: bu sinov do‘koni. Haqiqiy pul olinmaydi va akkaunt sotilmaydi.</div>
+<h2>Elite Game Marketga xush kelibsiz!</h2>
+O‘yin turini tanlab, demo katalogni ko‘ring.
 </div>
 
 <script>
-const content={
-buy:[
-'🛒 Akkaunt sotib olish',
-'O‘yin turini tanlang:',
-'<button onclick="alert(\'PUBG katalogi keyingi bosqichda ulanadi\')">🎮 PUBG MOBILE</button><button onclick="alert(\'Free Fire katalogi keyingi bosqichda ulanadi\')">🔥 FREE FIRE</button>'
-],
-sell:[
-'💰 Akkaunt sotish',
-'E’lon joylash tizimi keyingi bosqichda ulanadi.',
-''
-],
-premium:[
-'👑 Premium',
-'Premium imkoniyatlari tez orada qo‘shiladi.',
-''
-],
-profile:[
-'👤 Profil',
-'Profil ma’lumotlari bot bilan keyingi bosqichda ulanadi.',
-''
-],
-language:[
-'🌐 Tilni tanlash',
-'O‘zbekcha • Русский • English',
-''
-],
-help:[
-'🛡️ Yordam',
-'<button onclick="openAdmin()">✉️ ADMIN BILAN BOG‘LANISH — @toliboevv</button>',
-''
-]
-};
+const content=document.getElementById("content");
+
+function show(key){
+if(key==="buy"){
+content.innerHTML=`
+<h2>🛒 O‘yin turini tanlang</h2>
+<button onclick="catalog('PUBG MOBILE')">🎮 PUBG MOBILE</button>
+<button onclick="catalog('FREE FIRE')">🔥 FREE FIRE</button>
+<button class="back" onclick="home()">⬅ ORQAGA</button>`;
+}
+else if(key==="sell"){
+content.innerHTML=`
+<h2>💰 Akkaunt sotish</h2>
+<div class="notice">Demo rejimi: bu yerda haqiqiy e'lon joylanmaydi.</div>
+<input id="game" placeholder="O‘yin nomi" style="padding:12px;width:100%;margin:10px 0">
+<input id="name" placeholder="Akkaunt nomi" style="padding:12px;width:100%">
+<button class="back" onclick="alert('Demo: e’lon saqlanmadi')">E'LONNI KO‘RISH</button>
+<button class="back" onclick="home()">⬅ ORQAGA</button>`;
+}
+else if(key==="premium"){
+content.innerHTML=`<h2>⭐ PREMIUM</h2><p>Premium bo‘limi tez orada.</p><button onclick="home()">⬅ ORQAGA</button>`;
+}
+else if(key==="profile"){
+content.innerHTML=`<h2>👤 PROFIL</h2><p>Demo profil</p><button onclick="home()">⬅ ORQAGA</button>`;
+}
+else if(key==="language"){
+content.innerHTML=`<h2>🌐 TIL</h2><button onclick="alert('O‘zbek tili tanlandi')">🇺🇿 O‘zbekcha</button><button onclick="home()">⬅ ORQAGA</button>`;
+}
+else if(key==="help"){
+content.innerHTML=`<h2>🛡️ Yordam</h2><button onclick="openAdmin()">✉️ ADMIN BILAN BOG‘LANISH — @toliboevv</button><button class="back" onclick="home()">⬅ ORQAGA</button>`;
+}
+}
+
+function home(){
+content.innerHTML=`<div class="notice">DEMO REJIMI: haqiqiy pul olinmaydi.</div><h2>Elite Game Market</h2>O‘yin turini tanlang.`;
+}
+
+function catalog(game){
+content.innerHTML=`
+<h2>${game} katalogi</h2>
+<div class="notice">Bular namunaviy mahsulotlar. Haqiqiy akkauntlar emas.</div>
+<div class="card">
+<h3>🎮 ${game} — DEMO 01</h3>
+<p>Namunaviy akkaunt</p>
+<p class="price">50 000 so‘m</p>
+<button onclick="checkout('${game}','DEMO 01')">SOTIB OLISH</button>
+</div>
+<div class="card">
+<h3>🎮 ${game} — DEMO 02</h3>
+<p>Namunaviy akkaunt</p>
+<p class="price">80 000 so‘m</p>
+<button onclick="checkout('${game}','DEMO 02')">SOTIB OLISH</button>
+</div>
+<button class="back" onclick="show('buy')">⬅ ORQAGA</button>`;
+}
+
+function checkout(game,item){
+content.innerHTML=`
+<h2>🧾 Demo buyurtma</h2>
+<div class="card">${game}<br>${item}</div>
+<div class="notice">Sinov rejimi. Payme yoki Uzum orqali haqiqiy to‘lov amalga oshirilmaydi.</div>
+<h3>To‘lov usulini tanlang:</h3>
+<button onclick="demoPay('Payme')">Payme DEMO</button>
+<button onclick="demoPay('Uzum')">Uzum DEMO</button>
+<button class="back" onclick="catalog('${game}')">⬅ ORQAGA</button>`;
+}
+
+function demoPay(method){
+content.innerHTML=`
+<h2>✅ Demo sinov yakunlandi</h2>
+<div class="card">
+To‘lov usuli: ${method}<br>
+Holat: DEMO<br>
+Haqiqiy pul olinmadi.
+</div>
+<button onclick="home()">BOSH SAHIFA</button>`;
+}
 
 function openAdmin(){
 if(window.Telegram && window.Telegram.WebApp){
@@ -117,25 +131,7 @@ window.Telegram.WebApp.openTelegramLink('https://t.me/toliboevv');
 window.location.href='https://t.me/toliboevv';
 }
 }
-
-function show(key){
-const p=document.getElementById('panel');
-const d=content[key];
-
-p.innerHTML='<h2>'+d[0]+'</h2><div>'+d[1]+'</div>'+d[2];
-
-const back=document.createElement('button');
-back.className='gray';
-back.textContent='⬅ ORQAGA';
-back.onclick=function(){
-p.style.display='none';
-};
-
-p.appendChild(back);
-p.style.display='block';
-p.scrollIntoView({behavior:'smooth',block:'nearest'});
-}
 </script>
-
 </body>
 </html>
+
