@@ -1,53 +1,52 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090713">
 <title>ELITE GAME MARKET</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#090713;color:#fff;font-family:Arial,sans-serif;min-height:100vh;isolation:isolate}
-body:before{content:"";position:fixed;inset:-30%;z-index:-2;background:radial-gradient(circle at 20% 30%,#48247766,transparent 35%),radial-gradient(circle at 80% 60%,#211c5866,transparent 35%);animation:glow 9s ease-in-out infinite alternate}
+body{margin:0;background:#090713;color:#fff;font-family:Arial,sans-serif;min-height:100vh;isolation:isolate;font-size:16px}
+body:before{content:"";position:fixed;inset:-30%;z-index:-2;background:radial-gradient(circle at 20% 30%,#48247766,transparent 35%),radial-gradient(circle at 80% 60%,#211c5866,transparent 35%);animation:glow 10s ease-in-out infinite alternate}
 @keyframes glow{to{transform:translate(5%,4%) scale(1.12)}}
 #particles{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
-.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:#b98cff;box-shadow:0 0 12px #a45cff;animation:float 9s linear infinite}
+.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:#c49aff;box-shadow:0 0 12px #a45cff;animation:float 9s linear infinite}
 @keyframes float{from{transform:translateY(105vh);opacity:0}20%{opacity:.8}to{transform:translateY(-10vh);opacity:0}}
-header{padding:16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff14;background:#0b0916}
-.brand{display:flex;align-items:center;gap:10px}
-.emblem{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#9a61ff,#32145f);border:1px solid #d6b5ff66;box-shadow:0 0 18px #914aff55;font-size:23px;font-weight:900}
-.brand b{font-size:14px;letter-spacing:1px}
-.brand small{display:block;color:#a58acb;font-size:9px;margin-top:4px}
-.lang{background:#171327;color:white;border:1px solid #51416f;border-radius:9px;padding:8px}
-main{max-width:600px;margin:auto;padding:17px 14px 100px;position:relative}
-h2{font-size:19px;margin:20px 0 13px}
-.hero{border:1px solid #6846a5;border-radius:19px;padding:19px;background:linear-gradient(130deg,#291548,#11101f 70%);box-shadow:0 10px 35px #0008}
-.hero h1{font-size:23px;margin:0 0 8px}
-.hero p{color:#c2b6d6;font-size:13px;line-height:1.5}
-.tag{color:#c49aff;font-size:10px;letter-spacing:2px}
-.games{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.game{border:1px solid #413252;border-radius:16px;overflow:hidden;background:#141120;cursor:pointer;text-align:left;color:white;padding:0}
-.game img{width:100%;height:115px;object-fit:cover;background:#21182f}
-.game b{display:block;padding:12px;font-size:13px}
-.panel{background:#12101e;border:1px solid #332743;border-radius:16px;padding:15px;margin-top:14px}
-.btn{border:0;border-radius:11px;padding:12px 14px;background:linear-gradient(120deg,#9454ed,#6130a7);color:white;font-weight:bold;cursor:pointer}
+header{padding:15px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff18;background:#0b0916}
+.brand{display:flex;align-items:center;gap:11px}
+.emblem{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#a66aff,#32145f);border:1px solid #e0c7ff88;box-shadow:0 0 20px #914aff66;font-size:28px;font-weight:900}
+.brand b{font-size:15px;letter-spacing:1px}
+.brand small{display:block;color:#b69bd8;font-size:10px;margin-top:5px}
+.lang{background:#171327;color:white;border:1px solid #594477;border-radius:10px;padding:10px;font-size:14px}
+main{max-width:650px;margin:auto;padding:17px 14px 110px}
+h2{font-size:21px;margin:22px 0 14px}
+.hero{border:1px solid #6846a5;border-radius:19px;padding:21px;background:linear-gradient(130deg,#291548,#11101f 70%);box-shadow:0 10px 35px #0008}
+.hero h1{font-size:25px;margin:8px 0}
+.hero p{color:#c2b6d6;font-size:15px;line-height:1.6}
+.tag{color:#c49aff;font-size:11px;letter-spacing:2px}
+.games{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.game{border:1px solid #514064;border-radius:16px;overflow:hidden;background:#141120;cursor:pointer;text-align:left;color:white;padding:0}
+.game img{width:100%;height:125px;object-fit:cover;background:#21182f}
+.game b{display:block;padding:14px;font-size:15px}
+.panel{background:#12101e;border:1px solid #40304f;border-radius:16px;padding:17px;margin-top:14px}
+.btn{border:0;border-radius:12px;padding:14px 17px;background:linear-gradient(120deg,#9454ed,#6130a7);color:white;font-weight:bold;font-size:15px;cursor:pointer}
 .btn.secondary{background:#211a30;border:1px solid #594278}
-.btn.full{width:100%;margin-top:10px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-input,textarea,select{width:100%;background:#0b0a13;color:white;border:1px solid #443653;border-radius:10px;padding:12px;margin:6px 0;font-size:13px}
-textarea{min-height:75px}
-.payment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.payment-option{height:62px;border:1px solid #393348;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:8px}
-.payment-option svg{width:100%;max-width:105px;height:38px}
-.payment-option.selected{outline:2px solid #a66cff;box-shadow:0 0 14px #a66cff77}
-.muted{font-size:11px;color:#a9a1b9;line-height:1.5}
-.stat{background:#1a1528;border:1px solid #403052;border-radius:12px;padding:13px}
-.stat small{color:#a89ab9}
-.stat strong{display:block;margin-top:8px;font-size:18px}
-.nav{position:fixed;z-index:5;bottom:0;left:0;right:0;background:#0d0b18f2;border-top:1px solid #ffffff18;display:flex;justify-content:space-around;padding:10px 2px}
-.nav button{background:none;border:0;color:#a99bbd;font-size:10px;display:flex;flex-direction:column;align-items:center;gap:5px}
-.nav button span{font-size:19px}
+.btn.full{width:100%;margin-top:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+input,textarea,select{width:100%;background:#0b0a13;color:white;border:1px solid #514064;border-radius:11px;padding:14px;margin:7px 0;font-size:15px}
+textarea{min-height:90px}
+.payment-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.payment-option{height:70px;border:1px solid #393348;border-radius:13px;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:9px}
+.payment-option svg{width:100%;max-width:115px;height:43px}
+.payment-option.selected{outline:3px solid #a66cff;box-shadow:0 0 16px #a66cff77}
+.muted{font-size:13px;color:#b5abc4;line-height:1.6}
+.stat{background:#1a1528;border:1px solid #403052;border-radius:12px;padding:15px}
+.stat small{color:#b5a5c9;font-size:13px}
+.stat strong{display:block;margin-top:9px;font-size:20px}
+.nav{position:fixed;z-index:5;bottom:0;left:0;right:0;background:#0d0b18f5;border-top:1px solid #ffffff20;display:flex;justify-content:space-around;padding:10px 2px calc(10px + env(safe-area-inset-bottom))}
+.nav button{background:none;border:0;color:#b7a9ca;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:50px}
+.nav button span{font-size:22px}
 .nav button.active{color:#c59bff}
 .page{display:none}
 .page.active{display:block}
@@ -55,20 +54,21 @@ textarea{min-height:75px}
 .loading.show{display:flex}
 .loader{width:55px;height:55px;border:4px solid #332447;border-top-color:#b47aff;border-radius:50%;animation:spin .8s linear infinite;margin-bottom:20px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.history{padding:12px 0;border-bottom:1px solid #ffffff12;font-size:13px}
-.preview{width:70px;height:70px;object-fit:cover;border-radius:9px;margin:5px}
+.preview{width:75px;height:75px;object-fit:cover;border-radius:9px;margin:5px}
+a{text-decoration:none}
 </style>
 </head>
 <body>
 <div id="particles"></div>
-
 <header>
  <div class="brand">
   <div class="emblem">E</div>
   <div><b>ELITE GAME MARKET</b><small>GAMING • MARKET</small></div>
  </div>
- <select class="lang" id="language" onchange="changeLang(this.value)">
-  <option value="uz">UZ</option><option value="ru">RU</option><option value="en">EN</option><option value="tj">TJ</option><option value="kk">KZ</option><option value="ky">KG</option>
+ <select class="lang" id="language" aria-label="Language">
+  <option value="uz">UZ</option><option value="ru">RU</option>
+  <option value="en">EN</option><option value="tj">TJ</option>
+  <option value="kk">KZ</option><option value="ky">KG</option>
  </select>
 </header>
 
@@ -76,15 +76,14 @@ textarea{min-height:75px}
 <section id="home" class="page active">
  <div class="hero">
   <div class="tag">WELCOME TO ELITE</div>
-  <h1>ELITE GAME MARKET</h1>
-  <p>Gaming dunyosidagi e'lonlar va o‘yinlar katalogi.</p>
-  <button class="btn" onclick="showPage('catalog')">Katalogni ko‘rish</button>
+  <h1 data-i="welcome">ELITE GAME MARKET</h1>
+  <p data-i="intro">Gaming dunyosidagi e'lonlar va o‘yinlar katalogi.</p>
+  <button class="btn" data-i="catalogBtn" onclick="showPage('catalog')">Katalogni ko‘rish</button>
  </div>
-
- <h2>O‘yinlar</h2>
+ <h2 data-i="games">O‘yinlar</h2>
  <div class="games">
   <button class="game" onclick="startGame('PUBG MOBILE')">
-   <img src="https://play-lh.googleusercontent.com/Se7jR6A5R0Mk9ClaIguf46yi2K3k32JsqKb3gAtrktIh3JwnFfxrQRmG9GLvdMpbxbMrReUOxzDkStxGxNo-5Q=w512" alt="PUBG Mobile">
+   <img src="https://play-lh.googleusercontent.com/Se7jR6A5R0Mk9ClaIguf46yi2K3k32JsqKb3gAtrktIh3JwnFfxrQRm9GGLvdMpbxbMrReUOxzDkStxGxNo-5Q=w512" alt="PUBG Mobile">
    <b>PUBG MOBILE →</b>
   </button>
   <button class="game" onclick="startGame('FREE FIRE')">
@@ -92,8 +91,7 @@ textarea{min-height:75px}
    <b>FREE FIRE →</b>
   </button>
  </div>
-
- <h2>To‘lov usullari</h2>
+ <h2 data-i="payments">To‘lov usullari</h2>
  <div class="panel">
   <div class="payment-grid">
    <button class="payment-option" onclick="choosePayment(this,'HUMO')" aria-label="HUMO">
@@ -117,55 +115,55 @@ textarea{min-height:75px}
     </svg>
    </button>
   </div>
-  <p class="muted" id="paymentStatus">To‘lov usulini tanlang. Demo rejim.</p>
+  <p class="muted" id="paymentStatus" data-i="choosePayment">To‘lov usulini tanlang. Demo rejim.</p>
  </div>
 </section>
 
 <section id="catalog" class="page">
- <h2>Katalog</h2>
+ <h2 data-i="catalog">Katalog</h2>
  <div class="panel">
   <select id="gameFilter"><option>PUBG MOBILE</option><option>FREE FIRE</option></select>
-  <p class="muted">Hozircha demo katalog. Haqiqiy e'lonlar serverga ulanmagan.</p>
+  <p class="muted" data-i="emptyCatalog">Hozircha katalog bo‘sh. Bu demo ko‘rinish.</p>
   <div id="listingArea"></div>
  </div>
 </section>
 
 <section id="sell" class="page">
- <h2>E'lon yaratish</h2>
+ <h2 data-i="createAd">E'lon yaratish</h2>
  <div class="panel">
-  <label class="muted">O‘yin</label>
+  <label class="muted" data-i="gameLabel">O‘yin</label>
   <select id="sellGame"><option>PUBG MOBILE</option><option>FREE FIRE</option></select>
-  <input id="sellTitle" placeholder="E'lon nomi">
-  <input id="sellLevel" placeholder="Level">
-  <textarea id="sellDescription" placeholder="Hisob haqida ma'lumot"></textarea>
-  <input id="sellPrice" type="number" placeholder="Demo narxi (so‘m)">
-  <label class="muted">Rasmlar (12 tagacha)</label>
+  <input id="sellTitle" data-placeholder="adTitle" placeholder="E'lon nomi">
+  <input id="sellLevel" data-placeholder="level" placeholder="Level">
+  <textarea id="sellDescription" data-placeholder="description" placeholder="Hisob haqida ma'lumot"></textarea>
+  <input id="sellPrice" type="number" data-placeholder="price" placeholder="Demo narxi (so‘m)">
+  <label class="muted" data-i="photos">Rasmlar (12 tagacha)</label>
   <input id="sellPhotos" type="file" accept="image/*" multiple>
   <div id="photoPreview"></div>
-  <button class="btn full" onclick="previewListing()">E'lonni ko‘rib chiqish</button>
+  <button class="btn full" onclick="previewListing()" data-i="preview">E'lonni ko‘rib chiqish</button>
   <div id="sellResult"></div>
-  <p class="muted">Faqat demo. E'lon serverga yuborilmaydi.</p>
+  <p class="muted" data-i="demoNotice">Demo: e'lon serverga saqlanmaydi. O‘yin akkaunti parolini kiritmang.</p>
  </div>
 </section>
 
 <section id="profile" class="page">
- <h2>Profil</h2>
+ <h2 data-i="profile">Profil</h2>
  <div class="panel">
-  <div class="brand"><div class="emblem">👤</div><div><b id="profileName">Mehmon</b><small>ELITE USER</small></div></div>
+  <div class="brand"><div class="emblem">E</div><div><b id="profileName">Mehmon</b><small>ELITE USER</small></div></div>
   <div class="grid2" style="margin-top:15px">
-   <div class="stat"><small>Demo balans</small><strong id="balance">0 so‘m</strong></div>
-   <div class="stat"><small>Hisob holati</small><strong>Demo</strong></div>
+   <div class="stat"><small data-i="balance">Demo balans</small><strong>0 so‘m</strong></div>
+   <div class="stat"><small data-i="accountStatus">Hisob holati</small><strong>DEMO</strong></div>
   </div>
-  <h2>Xaridlar tarixi</h2><div id="purchases" class="muted">Hozircha xarid yo‘q.</div>
-  <h2>Sotuvlar tarixi</h2><div id="sales" class="muted">Hozircha sotuv yo‘q.</div>
-  <h2>Balans tarixi</h2><div id="balanceHistory" class="muted">Hozircha harakat yo‘q.</div>
+  <h2 data-i="purchaseHistory">Xaridlar tarixi</h2><p class="muted" data-i="noPurchases">Hozircha xarid yo‘q.</p>
+  <h2 data-i="salesHistory">Sotuvlar tarixi</h2><p class="muted" data-i="noSales">Hozircha sotuv yo‘q.</p>
+  <h2 data-i="balanceHistory">Balans tarixi</h2><p class="muted" data-i="noBalance">Hozircha harakat yo‘q.</p>
  </div>
 </section>
 
 <section id="premium" class="page">
- <h2>Telegram Premium</h2>
+ <h2 data-i="premium">Telegram Premium</h2>
  <div class="panel">
-  <p class="muted">Premium paketlari — demo ko‘rinish.</p>
+  <p class="muted" data-i="premiumDemo">Premium paketlari — demo ko‘rinish.</p>
   <div class="grid2">
    <button class="btn secondary" onclick="premiumDemo(1)">1 oy</button>
    <button class="btn secondary" onclick="premiumDemo(3)">3 oy</button>
@@ -176,29 +174,67 @@ textarea{min-height:75px}
 </section>
 
 <section id="help" class="page">
- <h2>Yordam</h2>
+ <h2 data-i="help">Yordam</h2>
  <div class="panel">
-  <p>Taklif va savollar uchun admin bilan bog‘laning.</p>
-  <a href="https://t.me/toliboevv" target="_blank"><button class="btn full">Telegram orqali bog‘lanish</button></a>
+  <p data-i="helpText">Savollar uchun Telegram orqali bog‘laning.</p>
+  <a href="https://t.me/toliboevv" target="_blank" rel="noopener"><button class="btn full" data-i="contact">Telegram orqali bog‘lanish</button></a>
  </div>
 </section>
 </main>
 
 <nav class="nav">
- <button class="active" onclick="showPage('home',this)"><span>⌂</span>Bosh sahifa</button>
- <button onclick="showPage('catalog',this)"><span>▦</span>Katalog</button>
- <button onclick="showPage('sell',this)"><span>＋</span>E'lon</button>
- <button onclick="showPage('profile',this)"><span>♙</span>Profil</button>
- <button onclick="showPage('premium',this)"><span>★</span>Premium</button>
- <button onclick="showPage('help',this)"><span>?</span>Yordam</button>
+ <button class="active" onclick="showPage('home',this)"><span>⌂</span><label data-i="home">Bosh sahifa</label></button>
+ <button onclick="showPage('catalog',this)"><span>▦</span><label data-i="catalog">Katalog</label></button>
+ <button onclick="showPage('sell',this)"><span>＋</span><label data-i="ad">E'lon</label></button>
+ <button onclick="showPage('profile',this)"><span>♙</span><label data-i="profile">Profil</label></button>
+ <button onclick="showPage('premium',this)"><span>★</span><label data-i="premiumShort">Premium</label></button>
+ <button onclick="showPage('help',this)"><span>?</span><label data-i="help">Yordam</label></button>
 </nav>
 
 <div class="loading" id="loading">
  <div class="loader"></div><h2 id="loadingTitle">ELITE GAME MARKET</h2>
- <p class="muted">Bo‘lim ochilmoqda...</p>
+ <p class="muted" data-i="opening">Bo‘lim ochilmoqda...</p>
 </div>
 
 <script>
+const translations={
+uz:{
+welcome:"ELITE GAME MARKET",intro:"Gaming dunyosidagi e'lonlar va o‘yinlar katalogi.",catalogBtn:"Katalogni ko‘rish",games:"O‘yinlar",payments:"To‘lov usullari",choosePayment:"To‘lov usulini tanlang. Demo rejim.",catalog:"Katalog",emptyCatalog:"Hozircha katalog bo‘sh. Bu demo ko‘rinish.",createAd:"E'lon yaratish",gameLabel:"O‘yin",adTitle:"E'lon nomi",level:"Level",description:"Hisob haqida ma'lumot",price:"Demo narxi (so‘m)",photos:"Rasmlar (12 tagacha)",preview:"E'lonni ko‘rib chiqish",demoNotice:"Demo: e'lon serverga saqlanmaydi. O‘yin akkaunti parolini kiritmang.",profile:"Profil",balance:"Demo balans",accountStatus:"Hisob holati",purchaseHistory:"Xaridlar tarixi",noPurchases:"Hozircha xarid yo‘q.",salesHistory:"Sotuvlar tarixi",noSales:"Hozircha sotuv yo‘q.",balanceHistory:"Balans tarixi",noBalance:"Hozircha harakat yo‘q.",premium:"Telegram Premium",premiumDemo:"Premium paketlari — demo ko‘rinish.",help:"Yordam",helpText:"Savollar uchun Telegram orqali bog‘laning.",contact:"Telegram orqali bog‘lanish",home:"Bosh sahifa",ad:"E'lon",premiumShort:"Premium",opening:"Bo‘lim ochilmoqda...",months:"oylik Premium — demo."
+},
+ru:{
+welcome:"ELITE GAME MARKET",intro:"Объявления и каталог игр.",catalogBtn:"Открыть каталог",games:"Игры",payments:"Способы оплаты",choosePayment:"Выберите способ оплаты. Демо-режим.",catalog:"Каталог",emptyCatalog:"Каталог пока пуст. Это демо.",createAd:"Создать объявление",gameLabel:"Игра",adTitle:"Название объявления",level:"Уровень",description:"Описание аккаунта",price:"Демо-цена (сум)",photos:"Фото (до 12)",preview:"Предпросмотр объявления",demoNotice:"Демо: объявление не сохраняется на сервере. Не вводите пароль игрового аккаунта.",profile:"Профиль",balance:"Демо-баланс",accountStatus:"Статус аккаунта",purchaseHistory:"История покупок",noPurchases:"Покупок пока нет.",salesHistory:"История продаж",noSales:"Продаж пока нет.",balanceHistory:"История баланса",noBalance:"Движений пока нет.",premium:"Telegram Premium",premiumDemo:"Пакеты Premium — демо.",help:"Помощь",helpText:"Свяжитесь через Telegram.",contact:"Связаться в Telegram",home:"Главная",ad:"Объявление",premiumShort:"Premium",opening:"Открывается...",months:"месяцев Premium — демо."
+},
+en:{
+welcome:"ELITE GAME MARKET",intro:"Gaming listings and game catalog.",catalogBtn:"View catalog",games:"Games",payments:"Payment methods",choosePayment:"Choose a payment method. Demo mode.",catalog:"Catalog",emptyCatalog:"The catalog is empty for now. Demo only.",createAd:"Create listing",gameLabel:"Game",adTitle:"Listing title",level:"Level",description:"Account description",price:"Demo price (UZS)",photos:"Photos (up to 12)",preview:"Preview listing",demoNotice:"Demo only: listings are not saved. Never enter a game account password.",profile:"Profile",balance:"Demo balance",accountStatus:"Account status",purchaseHistory:"Purchase history",noPurchases:"No purchases yet.",salesHistory:"Sales history",noSales:"No sales yet.",balanceHistory:"Balance history",noBalance:"No activity yet.",premium:"Telegram Premium",premiumDemo:"Premium packages — demo only.",help:"Help",helpText:"Contact us through Telegram.",contact:"Contact on Telegram",home:"Home",ad:"Listing",premiumShort:"Premium",opening:"Opening...",months:"month Premium — demo."
+},
+tj:{
+welcome:"ELITE GAME MARKET",intro:"Эълонҳо ва феҳристи бозиҳо.",catalogBtn:"Кушодани феҳрист",games:"Бозиҳо",payments:"Усулҳои пардохт",choosePayment:"Усули пардохтро интихоб кунед. Намоишӣ.",catalog:"Феҳрист",emptyCatalog:"Феҳрист ҳоло холӣ аст. Намоишӣ.",createAd:"Эълон сохтан",gameLabel:"Бозӣ",adTitle:"Номи эълон",level:"Сатҳ",description:"Маълумоти аккаунт",price:"Нархи намоишӣ",photos:"Суратҳо (то 12)",preview:"Намоиши эълон",demoNotice:"Намоишӣ: эълон нигоҳ дошта намешавад. Пароли аккаунтро нанависед.",profile:"Профил",balance:"Тавозуни намоишӣ",accountStatus:"Ҳолати ҳисоб",purchaseHistory:"Таърихи харид",noPurchases:"Ҳоло харид нест.",salesHistory:"Таърихи фурӯш",noSales:"Ҳоло фурӯш нест.",balanceHistory:"Таърихи тавозун",noBalance:"Ҳоло ҳаракат нест.",premium:"Telegram Premium",premiumDemo:"Бастаҳои Premium — намоишӣ.",help:"Кӯмак",helpText:"Бо Telegram тамос гиред.",contact:"Тамос дар Telegram",home:"Асосӣ",ad:"Эълон",premiumShort:"Premium",opening:"Кушода мешавад...",months:"моҳаи Premium — намоишӣ."
+},
+kk:{
+welcome:"ELITE GAME MARKET",intro:"Ойын хабарландырулары мен каталогы.",catalogBtn:"Каталогты ашу",games:"Ойындар",payments:"Төлем әдістері",choosePayment:"Төлем әдісін таңдаңыз. Демо режим.",catalog:"Каталог",emptyCatalog:"Әзірге каталог бос. Демо нұсқа.",createAd:"Хабарландыру жасау",gameLabel:"Ойын",adTitle:"Хабарландыру атауы",level:"Деңгей",description:"Аккаунт туралы мәлімет",price:"Демо бағасы",photos:"Суреттер (12-ге дейін)",preview:"Хабарландыруды көру",demoNotice:"Демо: хабарландыру серверге сақталмайды. Аккаунт құпиясөзін енгізбеңіз.",profile:"Профиль",balance:"Демо баланс",accountStatus:"Аккаунт күйі",purchaseHistory:"Сатып алу тарихы",noPurchases:"Әзірге сатып алу жоқ.",salesHistory:"Сату тарихы",noSales:"Әзірге сатылым жоқ.",balanceHistory:"Баланс тарихы",noBalance:"Әзірге әрекет жоқ.",premium:"Telegram Premium",premiumDemo:"Premium пакеттері — демо.",help:"Көмек",helpText:"Telegram арқылы хабарласыңыз.",contact:"Telegram-да байланысу",home:"Басты бет",ad:"Хабарландыру",premiumShort:"Premium",opening:"Ашылуда...",months:"айлық Premium — демо."
+},
+ky:{
+welcome:"ELITE GAME MARKET",intro:"Оюн жарыялары жана оюндар каталогу.",catalogBtn:"Каталогду ачуу",games:"Оюндар",payments:"Төлөм ыкмалары",choosePayment:"Төлөм ыкмасын тандаңыз. Демо режим.",catalog:"Каталог",emptyCatalog:"Азырынча каталог бош. Демо.",createAd:"Жарыя түзүү",gameLabel:"Оюн",adTitle:"Жарыянын аталышы",level:"Деңгээл",description:"Аккаунт жөнүндө маалымат",price:"Демо баасы",photos:"Сүрөттөр (12ге чейин)",preview:"Жарыяны көрүү",demoNotice:"Демо: жарыя серверге сакталбайт. Аккаунт сырсөзүн киргизбеңиз.",profile:"Профиль",balance:"Демо баланс",accountStatus:"Аккаунт абалы",purchaseHistory:"Сатып алуу тарыхы",noPurchases:"Азырынча сатып алуу жок.",salesHistory:"Сатуу тарыхы",noSales:"Азырынча сатуу жок.",balanceHistory:"Баланс тарыхы",noBalance:"Азырынча аракет жок.",premium:"Telegram Premium",premiumDemo:"Premium топтомдору — демо.",help:"Жардам",helpText:"Telegram аркылуу байланышыңыз.",contact:"Telegram менен байланышуу",home:"Башкы бет",ad:"Жарыя",premiumShort:"Premium",opening:"Ачылууда...",months:"айлык Premium — демо."
+}
+};
+
+function setLanguage(lang){
+ const dict=translations[lang]||translations.uz;
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-i]").forEach(el=>{
+  const key=el.dataset.i;
+  if(dict[key])el.textContent=dict[key];
+ });
+ document.querySelectorAll("[data-placeholder]").forEach(el=>{
+  const key=el.dataset.placeholder;
+  if(dict[key])el.placeholder=dict[key];
+ });
+ document.getElementById("language").value=lang;
+ localStorage.setItem("egm_lang",lang);
+}
+document.getElementById("language").addEventListener("change",e=>setLanguage(e.target.value));
+setLanguage(localStorage.getItem("egm_lang")||"uz");
+
 const particleBox=document.getElementById("particles");
 for(let i=0;i<35;i++){
  const p=document.createElement("i");
@@ -224,14 +260,24 @@ function startGame(game){
   loader.classList.remove("show");
   document.getElementById("gameFilter").value=game;
   showPage("catalog");
- },1800);
+ },1500);
 }
-let selectedPayment="";
 function choosePayment(btn,name){
  document.querySelectorAll(".payment-option").forEach(x=>x.classList.remove("selected"));
  btn.classList.add("selected");
- selectedPayment=name;
- document.getElementById("paymentStatus").textContent=name+" tanlandi. Demo rejim — haqiqiy to‘lov yo‘q.";
+ const lang=localStorage.getItem("egm_lang")||"uz";
+ const messages={
+ uz:name+" tanlandi. Demo rejim — haqiqiy to‘lov yo‘q.",
+ ru:name+" выбран. Демо — реальная оплата не выполняется.",
+ en:name+" selected. Demo mode — no real payment.",
+ tj:name+" интихоб шуд. Пардохти воқеӣ нест.",
+ kk:name+" таңдалды. Нақты төлем жасалмайды.",
+ ky:name+" тандалды. Чыныгы төлөм жок."
+ };
+ document.getElementById("paymentStatus").textContent=messages[lang];
+}
+function escapeHTML(s){
+ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
 function previewListing(){
  const title=document.getElementById("sellTitle").value.trim();
@@ -239,10 +285,7 @@ function previewListing(){
  if(!title||!price){alert("E'lon nomi va demo narxini kiriting.");return}
  const game=document.getElementById("sellGame").value;
  document.getElementById("sellResult").innerHTML=
- `<div class="panel"><b>${escapeHTML(title)}</b><p>${escapeHTML(game)}</p><b>${Number(price).toLocaleString()} so‘m</b><p class="muted">Demo e'lon ko‘rinishi. Serverga saqlanmaydi.</p></div>`;
-}
-function escapeHTML(s){
- return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ `<div class="panel"><b>${escapeHTML(title)}</b><p>${escapeHTML(game)}</p><b>${Number(price).toLocaleString()} so‘m</b><p class="muted">Demo e'lon. Serverga saqlanmaydi.</p></div>`;
 }
 document.getElementById("sellPhotos").addEventListener("change",function(){
  const box=document.getElementById("photoPreview");
@@ -250,16 +293,14 @@ document.getElementById("sellPhotos").addEventListener("change",function(){
  [...this.files].slice(0,12).forEach(file=>{
   if(!file.type.startsWith("image/"))return;
   const img=document.createElement("img");
-  img.className="preview";img.src=URL.createObjectURL(file);
+  img.className="preview";
+  img.src=URL.createObjectURL(file);
   box.appendChild(img);
  });
 });
-function premiumDemo(months){alert(months+" oylik Premium — demo. Haqiqiy xarid mavjud emas.");}
-function changeLang(lang){
- localStorage.setItem("egm_lang",lang);
- if(lang!=="uz")alert("Til tanlandi. Ayrim bo‘limlar hozircha o‘zbek tilida qoladi.");
+function premiumDemo(months){
+ alert(months+" "+(translations[localStorage.getItem("egm_lang")||"uz"].months));
 }
-document.getElementById("language").value=localStorage.getItem("egm_lang")||"uz";
 </script>
 </body>
 </html>
