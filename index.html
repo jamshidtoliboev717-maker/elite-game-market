@@ -6,23 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080b13">
 <title>Elite Game Market</title>
-
 <style>
 *{box-sizing:border-box}
 body{
-margin:0;
-min-height:100vh;
+margin:0;min-height:100vh;
 background:radial-gradient(circle at 50% 0,#25203b 0,#0b101b 48%,#05070c 100%);
-color:#fff;
-font-family:Arial,sans-serif;
-padding:22px 16px 35px
+color:#fff;font-family:Arial,sans-serif;padding:22px 16px 35px
 }
 .wrap{max-width:520px;margin:auto}
 header{
-text-align:center;
-padding:24px 12px 28px;
-border:1px solid #70551d;
-border-radius:22px;
+text-align:center;padding:24px 12px 28px;
+border:1px solid #70551d;border-radius:22px;
 background:linear-gradient(145deg,#171d2a,#090d15);
 box-shadow:0 0 25px #d7a52b22
 }
@@ -32,48 +26,30 @@ h1{font-size:25px;letter-spacing:1px;color:#f7d77b;margin:8px 0}
 .tag{margin-top:17px;color:#e8d6a0;font-size:14px;line-height:1.6}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px}
 button{
-min-height:104px;
-border:1px solid transparent;
-border-radius:18px;
-color:white;
-font-weight:800;
-font-size:16px;
-letter-spacing:.4px;
-background:#171d2a;
-cursor:pointer;
+min-height:104px;border:1px solid transparent;border-radius:18px;
+color:white;font-weight:800;font-size:16px;letter-spacing:.4px;
+background:#171d2a;cursor:pointer;
 box-shadow:inset 0 1px 0 #ffffff22,0 8px 18px #0008;
 transition:transform .12s
 }
 button:active{transform:scale(.97)}
 button span{display:block;font-size:29px;margin-bottom:8px}
-.gold{background:linear-gradient(135deg,#79500a,#d69b12 55%,#573700);border-color:#ffd34e;box-shadow:0 0 17px #eebc2b55}
-.green{background:linear-gradient(135deg,#07522b,#08a94d 55%,#06401f);border-color:#37ff83;box-shadow:0 0 17px #20e86a55}
-.purple{background:linear-gradient(135deg,#40105e,#941bd0 55%,#32064f);border-color:#e25bff;box-shadow:0 0 17px #c13cff55}
-.blue{background:linear-gradient(135deg,#073b75,#087bd5 55%,#062c60);border-color:#45baff;box-shadow:0 0 17px #168bff55}
+.gold{background:linear-gradient(135deg,#79500a,#d69b12 55%,#573700);border-color:#ffd34e}
+.green{background:linear-gradient(135deg,#07522b,#08a94d 55%,#06401f);border-color:#37ff83}
+.purple{background:linear-gradient(135deg,#40105e,#941bd0 55%,#32064f);border-color:#e25bff}
+.blue{background:linear-gradient(135deg,#073b75,#087bd5 55%,#062c60);border-color:#45baff}
 .gray{background:linear-gradient(135deg,#202a38,#465365 55%,#151c28);border-color:#9ca9bb}
-.red{background:linear-gradient(135deg,#650d18,#d51b2b 55%,#4c0810);border-color:#ff5965;box-shadow:0 0 17px #f22b4055}
-.panel{
-display:none;
-margin-top:20px;
-padding:20px;
-border-radius:18px;
-background:#151d2a;
-border:1px solid #4b5362;
-line-height:1.6
-}
+.red{background:linear-gradient(135deg,#650d18,#d51b2b 55%,#4c0810);border-color:#ff5965}
+.panel{display:none;margin-top:20px;padding:20px;border-radius:18px;background:#151d2a;border:1px solid #4b5362;line-height:1.6}
 .panel h2{color:#f7d77b;margin-top:0}
 .panel button{min-height:48px;width:100%;margin-top:10px}
 .panel a{color:#f7d77b}
 footer{text-align:center;color:#8490a3;font-size:12px;margin-top:22px}
-@media(max-width:360px){
-button{font-size:14px;min-height:92px}
-}
+@media(max-width:360px){button{font-size:14px;min-height:92px}}
 </style>
 </head>
-
 <body>
 <div class="wrap">
-
 <header>
 <div class="crown">👑</div>
 <h1>ELITE GAME MARKET</h1>
@@ -91,7 +67,6 @@ button{font-size:14px;min-height:92px}
 </div>
 
 <section class="panel" id="panel"></section>
-
 <footer>✦ ELITE • SECURE • PREMIUM ✦</footer>
 </div>
 
@@ -124,35 +99,35 @@ language:[
 ],
 help:[
 '🛡️ Yordam',
-'<a href="https://t.me/toliboevv">✉️ ADMIN BILAN BOG‘LANISH — @toliboevv</a>',
-''
-]
+'<a href="https://t.me/toliboevv" onclick="openAdmin(event)">✉️ ADMIN BILAN BOG‘LANISH — @toliboevv</a>',
 ''
 ]
 };
+
+function openAdmin(event){
+event.preventDefault();
+const url='https://t.me/toliboevv';
+if(window.Telegram && window.Telegram.WebApp){
+window.Telegram.WebApp.openTelegramLink(url);
+}else{
+window.location.href=url;
+}
+}
 
 function show(key){
 const p=document.getElementById('panel');
 const d=content[key];
-
-p.innerHTML=
-'<h2>'+d[0]+'</h2>'+
-'<div>'+d[1]+'</div>'+
-d[2];
+p.innerHTML='<h2>'+d[0]+'</h2><div>'+d[1]+'</div>'+d[2];
 
 const back=document.createElement('button');
 back.className='gray';
 back.textContent='⬅ ORQAGA';
-back.onclick=function(){
-p.style.display='none';
-};
-
+back.onclick=function(){p.style.display='none';};
 p.appendChild(back);
 p.style.display='block';
 p.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 </script>
-
 </body>
 </html>
 
