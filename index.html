@@ -1,140 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b101b">
+<meta name="theme-color" content="#090d16">
 <title>ELITE GAME MARKET</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <style>
 *{box-sizing:border-box}
-
 body{
-margin:0;
-min-height:100vh;
-background:radial-gradient(circle at 50% 0,#25203b 0,#0b101b 48%,#070a12 100%);
-color:white;
-font-family:Arial,sans-serif;
+ margin:0;min-height:100vh;color:white;font-family:Arial,sans-serif;
+ background:radial-gradient(circle at top,#29213e,#0b101b 55%,#070a12);
 }
-
 header{
-text-align:center;
-padding:28px 10px;
-background:linear-gradient(180deg,#211c32,#111522);
-border-bottom:2px solid #d5a52b;
+ text-align:center;padding:25px 10px;
+ background:linear-gradient(180deg,#211c32,#111522);
+ border-bottom:2px solid #d5a52b;
 }
-
-h1{color:#e8bd50;margin:0;font-size:25px}
-header p{color:#aaa;font-size:12px;margin-bottom:0}
-
-nav{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-padding:15px;
-}
-
+h1{color:#f4ce6b;margin:0;font-size:24px}
+header p{color:#aaa;font-size:12px}
+nav{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:14px}
 button{
-border:1px solid #b98b2c;
-background:linear-gradient(145deg,#20243a,#111827);
-color:#f4ce6b;
-padding:13px;
-border-radius:10px;
-font-weight:bold;
-font-size:14px;
-cursor:pointer;
+ border:1px solid #b98b2c;
+ background:linear-gradient(145deg,#25243a,#111827);
+ color:#f4ce6b;padding:13px;border-radius:10px;
+ font-weight:bold;font-size:14px;cursor:pointer;
 }
-
 button:active{opacity:.7}
-
-#content{padding:15px}
+#content{padding:15px;max-width:650px;margin:auto}
 h2{color:#f4ce6b}
-
 .notice{
-background:#382c14;
-color:#ffdc82;
-padding:12px;
-border-radius:9px;
-font-size:12px;
-margin-bottom:15px;
-border:1px solid #8c6925;
+ background:#382c14;color:#ffdc82;padding:12px;
+ border-radius:9px;font-size:12px;margin:12px 0;
+ border:1px solid #8c6925;
 }
-
-.game-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-margin:15px 0;
-}
-
-.game-card{
-padding:0;
-overflow:hidden;
-border-radius:14px;
-background:#171f30;
-color:#f4ce6b;
-width:100%;
-border:1px solid #d5a52b;
-box-shadow:0 5px 18px #0008;
-}
-
-.game-card img{
-width:100%;
-height:190px;
-object-fit:cover;
-display:block;
-}
-
-.game-card span{
-display:block;
-padding:14px 5px;
-font-size:14px;
-}
-
+.game-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0}
+.game-card{padding:0;overflow:hidden;width:100%}
+.game-card img{width:100%;height:150px;object-fit:cover;display:block}
+.game-card span{display:block;padding:14px 5px}
 .card{
-background:linear-gradient(145deg,#1c2335,#101725);
-border:1px solid #66512b;
-padding:15px;
-border-radius:12px;
-margin:12px 0;
+ background:linear-gradient(145deg,#1c2335,#101725);
+ border:1px solid #66512b;padding:15px;
+ border-radius:12px;margin:12px 0;
 }
-
-.price{
-color:#f4ce6b;
-font-size:20px;
-font-weight:bold;
+input,textarea,select{
+ width:100%;padding:12px;margin:7px 0;border-radius:8px;
+ border:1px solid #8c6925;background:#101827;color:white;
+ font-size:14px;
 }
-
-.back{margin-top:12px;width:100%}
-
-input{
-width:100%;
-padding:12px;
-margin:7px 0;
-border-radius:8px;
-border:1px solid #8c6925;
-background:#101827;
-color:white;
-}
+textarea{min-height:85px;resize:vertical}
+input[type=file]{background:#171f30}
+.back{width:100%;margin-top:12px}
+.price{color:#f4ce6b;font-size:20px;font-weight:bold}
+.preview{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.preview img{width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid #b98b2c}
+.small{font-size:12px;color:#aaa}
+.listing-img{width:100%;max-height:220px;object-fit:cover;border-radius:8px}
 </style>
 </head>
 
 <body>
-
 <header>
 <h1>👑 ELITE GAME MARKET</h1>
 <p>PUBG MOBILE • FREE FIRE</p>
 </header>
 
 <nav>
-<button onclick="show('buy')">🛒 SOTIB OLISH</button>
-<button onclick="show('sell')">💰 SOTISH</button>
-<button onclick="show('premium')">⭐ PREMIUM</button>
-<button onclick="show('profile')">👤 PROFIL</button>
-<button onclick="show('language')">🌐 TIL</button>
-<button onclick="show('help')">🛡️ YORDAM</button>
+<button onclick="show('buy')" id="nBuy">🛒 SOTIB OLISH</button>
+<button onclick="show('sell')" id="nSell">💰 AKKAUNT SOTISH</button>
+<button onclick="show('premium')" id="nPremium">⭐ PREMIUM</button>
+<button onclick="show('profile')" id="nProfile">👤 PROFIL</button>
+<button onclick="show('language')" id="nLanguage">🌐 TIL</button>
+<button onclick="show('help')" id="nHelp">🛡️ YORDAM</button>
 </nav>
 
 <div id="content"></div>
@@ -142,157 +80,311 @@ color:white;
 <script>
 const content=document.getElementById("content");
 
-const games={
-pubg:{
-name:"PUBG MOBILE",
-image:"https://images.igdb.com/sc69jb.jpg"
+const translations={
+uz:{
+buy:"SOTIB OLISH",sell:"AKKAUNT SOTISH",premium:"PREMIUM",profile:"PROFIL",language:"TIL",help:"YORDAM",
+choose:"O‘yin turini tanlang",pubg:"PUBG MOBILE",ff:"FREE FIRE",
+demo:"DEMO REJIMI: haqiqiy pul olinmaydi.",
+chooseGame:"O‘yinni tanlang",accountName:"Akkaunt nomi",
+level:"Akkaunt darajasi",skins:"Skinlar va buyumlar haqida ma’lumot",
+price:"Narxi (so‘m)",photos:"Akkaunt rasmlari (1–12 ta)",
+pick:"Rasmlarni tanlash",submit:"E’LONNI KO‘RISH",
+back:"⬅ ORQAGA",required:"Ma’lumotlarni to‘ldiring va kamida 1 ta rasm tanlang.",
+tooMany:"12 tadan ko‘p rasm tanlamang.",
+catalog:"Katalog",sample:"Namunaviy akkaunt — haqiqiy emas.",
+premiumSoon:"Tez orada.",demoProfile:"Demo profil.",
+helpText:"Yordam kerakmi? Admin bilan bog‘laning.",
+admin:"ADMIN — @toliboevv",home:"BOSH SAHIFA",
+listing:"E’lon ma’lumotlari",noListings:"Hozircha namunaviy akkauntlar yo‘q.",
+languageTitle:"Tilni tanlang",preview:"Tanlangan rasmlar"
 },
-ff:{
-name:"FREE FIRE",
-image:"https://cdn.wildflamestudio.com/common/web_event/official2.ff.garena.all/202210/82fe305f7dbb9f25e68996f8f719e576.jpg"
+ru:{
+buy:"КУПИТЬ",sell:"ПРОДАТЬ АККАУНТ",premium:"ПРЕМИУМ",profile:"ПРОФИЛЬ",language:"ЯЗЫК",help:"ПОМОЩЬ",
+choose:"Выберите игру",pubg:"PUBG MOBILE",ff:"FREE FIRE",
+demo:"ДЕМО: реальные деньги не принимаются.",
+chooseGame:"Выберите игру",accountName:"Название аккаунта",
+level:"Уровень аккаунта",skins:"Информация о скинах и предметах",
+price:"Цена (сум)",photos:"Фото аккаунта (1–12)",
+pick:"Выбрать фото",submit:"ПРЕДПРОСМОТР ОБЪЯВЛЕНИЯ",
+back:"⬅ НАЗАД",required:"Заполните данные и выберите хотя бы 1 фото.",
+tooMany:"Выберите не более 12 фото.",
+catalog:"Каталог",sample:"Пример аккаунта — не настоящий.",
+premiumSoon:"Скоро.",demoProfile:"Демо-профиль.",
+helpText:"Нужна помощь? Свяжитесь с администратором.",
+admin:"АДМИН — @toliboevv",home:"ГЛАВНАЯ",
+listing:"Информация объявления",noListings:"Пока нет примеров аккаунтов.",
+languageTitle:"Выберите язык",preview:"Выбранные фото"
+},
+en:{
+buy:"BUY",sell:"SELL ACCOUNT",premium:"PREMIUM",profile:"PROFILE",language:"LANGUAGE",help:"HELP",
+choose:"Choose a game",pubg:"PUBG MOBILE",ff:"FREE FIRE",
+demo:"DEMO MODE: no real money is accepted.",
+chooseGame:"Choose a game",accountName:"Account name",
+level:"Account level",skins:"Skins and items information",
+price:"Price (UZS)",photos:"Account photos (1–12)",
+pick:"Choose photos",submit:"PREVIEW LISTING",
+back:"⬅ BACK",required:"Fill in the details and select at least 1 photo.",
+tooMany:"Choose no more than 12 photos.",
+catalog:"Catalog",sample:"Sample account — not real.",
+premiumSoon:"Coming soon.",demoProfile:"Demo profile.",
+helpText:"Need help? Contact the administrator.",
+admin:"ADMIN — @toliboevv",home:"HOME",
+listing:"Listing information",noListings:"No sample accounts yet.",
+languageTitle:"Choose a language",preview:"Selected photos"
+},
+tg:{
+buy:"ХАРИД",sell:"ФУРӮШИ АККАУНТ",premium:"ПРЕМИУМ",profile:"ПРОФИЛ",language:"ЗАБОН",help:"КӮМАК",
+choose:"Бозиро интихоб кунед",pubg:"PUBG MOBILE",ff:"FREE FIRE",
+demo:"РЕЖИМИ НАМОИШӢ: пули ҳақиқӣ гирифта намешавад.",
+chooseGame:"Бозиро интихоб кунед",accountName:"Номи аккаунт",
+level:"Сатҳи аккаунт",skins:"Маълумот дар бораи скинҳо ва ашё",
+price:"Нарх (сум)",photos:"Суратҳои аккаунт (1–12)",
+pick:"Интихоби суратҳо",submit:"ПЕШНАМОИШИ ЭЪЛОН",
+back:"⬅ ҚАФО",required:"Маълумотро пур кунед ва ҳадди ақал 1 сурат интихоб кунед.",
+tooMany:"На бештар аз 12 сурат интихоб кунед.",
+catalog:"Каталог",sample:"Аккаунти намунавӣ — ҳақиқӣ нест.",
+premiumSoon:"Ба наздикӣ.",demoProfile:"Профили намоишӣ.",
+helpText:"Кӯмак лозим? Бо маъмур тамос гиред.",
+admin:"АДМИН — @toliboevv",home:"САҲИФАИ АСОСӢ",
+listing:"Маълумоти эълон",noListings:"Ҳоло аккаунтҳои намунавӣ нестанд.",
+languageTitle:"Забонро интихоб кунед",preview:"Суратҳои интихобшуда"
+},
+kk:{
+buy:"САТЫП АЛУ",sell:"АККАУНТ САТУ",premium:"ПРЕМИУМ",profile:"ПРОФИЛЬ",language:"ТІЛ",help:"КӨМЕК",
+choose:"Ойынды таңдаңыз",pubg:"PUBG MOBILE",ff:"FREE FIRE",
+demo:"ДЕМО: нақты ақша қабылданбайды.",
+chooseGame:"Ойынды таңдаңыз",accountName:"Аккаунт атауы",
+level:"Аккаунт деңгейі",skins:"Скиндер мен заттар туралы ақпарат",
+price:"Бағасы (сум)",photos:"Аккаунт суреттері (1–12)",
+pick:"Суреттерді таңдау",submit:"ХАБАРЛАНДЫРУДЫ КӨРУ",
+back:"⬅ АРТҚА",required:"Мәліметтерді толтырып, кемінде 1 сурет таңдаңыз.",
+tooMany:"12 суреттен артық таңдамаңыз.",
+catalog:"Каталог",sample:"Үлгі аккаунт — шынайы емес.",
+premiumSoon:"Жақында.",demoProfile:"Демо профиль.",
+helpText:"Көмек керек пе? Әкімшіге хабарласыңыз.",
+admin:"ӘКІМШІ — @toliboevv",home:"БАСТЫ БЕТ",
+listing:"Хабарландыру мәліметтері",noListings:"Әзірге үлгі аккаунттар жоқ.",
+languageTitle:"Тілді таңдаңыз",preview:"Таңдалған суреттер"
+},
+ky:{
+buy:"САТЫП АЛУУ",sell:"АККАУНТ САТУУ",premium:"ПРЕМИУМ",profile:"ПРОФИЛЬ",language:"ТИЛ",help:"ЖАРДАМ",
+choose:"Оюнду тандаңыз",pubg:"PUBG MOBILE",ff:"FREE FIRE",
+demo:"ДЕМО: чыныгы акча алынбайт.",
+chooseGame:"Оюнду тандаңыз",accountName:"Аккаунттун аты",
+level:"Аккаунт деңгээли",skins:"Скиндер жана буюмдар жөнүндө маалымат",
+price:"Баасы (сум)",photos:"Аккаунт сүрөттөрү (1–12)",
+pick:"Сүрөттөрдү тандоо",submit:"ЖАРНАМАНЫ КӨРҮҮ",
+back:"⬅ АРТКА",required:"Маалыматты толтуруп, жок дегенде 1 сүрөт тандаңыз.",
+tooMany:"12ден ашык сүрөт тандабаңыз.",
+catalog:"Каталог",sample:"Үлгү аккаунт — чыныгы эмес.",
+premiumSoon:"Жакында.",demoProfile:"Демо профиль.",
+helpText:"Жардам керекпи? Администраторго кайрылыңыз.",
+admin:"АДМИН — @toliboevv",home:"БАШКЫ БЕТ",
+listing:"Жарнама маалыматы",noListings:"Азырынча үлгү аккаунттар жок.",
+languageTitle:"Тилди тандаңыз",preview:"Тандалган сүрөттөр"
 }
 };
 
-function home(){
-content.innerHTML=`
-<div class="notice">
-DEMO REJIMI: hozircha haqiqiy pul olinmaydi.
-</div>
-<h2>🎮 O‘yin turini tanlang</h2>
-${gameButtons()}
-`;
-}
+let lang=localStorage.getItem("egm_lang")||"uz";
+function t(key){return translations[lang][key]||translations.uz[key]||key;}
 
-function gameButtons(){
-return `
-<div class="game-grid">
-<button class="game-card" onclick="catalog('PUBG MOBILE')">
-<img src="${games.pubg.image}" alt="PUBG MOBILE"
-onerror="this.style.display='none'">
+const games={
+pubg:{
+name:"PUBG MOBILE",
+image:"https://images.igdb.com/sc69jb.jpg",
+emoji:"🎮"
+},
+ff:{
+name:"FREE FIRE",
+image:"https://cdn.wildflamestudio.com/common/web_event/official2.ff.garena.all/202210/82fe305f7dbb9f25e68996f8f719e576.jpg",
+emoji:"🔥"
+}
+};
+
+function gameButtons(action){
+return `<div class="game-grid">
+<button class="game-card" onclick="${action}('pubg')">
+<img src="${games.pubg.image}" alt="PUBG MOBILE" onerror="this.style.display='none'">
 <span>🎮 PUBG MOBILE</span>
 </button>
-
-<button class="game-card" onclick="catalog('FREE FIRE')">
-<img src="${games.ff.image}" alt="FREE FIRE"
-onerror="this.style.display='none'">
+<button class="game-card" onclick="${action}('ff')">
+<img src="${games.ff.image}" alt="FREE FIRE" onerror="this.style.display='none'">
 <span>🔥 FREE FIRE</span>
 </button>
 </div>`;
 }
 
-function show(key){
+function home(){
+content.innerHTML=`
+<div class="notice">${t("demo")}</div>
+<h2>🎮 ${t("choose")}</h2>
+${gameButtons("catalog")}
+`;
+}
 
-if(key==="buy"){
+function updateMenu(){
+document.getElementById("nBuy").textContent="🛒 "+t("buy");
+document.getElementById("nSell").textContent="💰 "+t("sell");
+document.getElementById("nPremium").textContent="⭐ "+t("premium");
+document.getElementById("nProfile").textContent="👤 "+t("profile");
+document.getElementById("nLanguage").textContent="🌐 "+t("language");
+document.getElementById("nHelp").textContent="🛡️ "+t("help");
+}
+
+function show(key){
+if(key==="buy")home();
+
+if(key==="sell"){
+content.innerHTML=`
+<h2>💰 ${t("sell")}</h2>
+<div class="notice">${t("demo")}</div>
+<h3>${t("chooseGame")}</h3>
+${gameButtons("sellForm")}
+<button class="back" onclick="home()">${t("back")}</button>`;
+}
+
+if(key==="premium"){
+content.innerHTML=`<h2>⭐ ${t("premium")}</h2><div class="card">${t("premiumSoon")}</div><button class="back" onclick="home()">${t("back")}</button>`;
+}
+
+if(key==="profile"){
+content.innerHTML=`<h2>👤 ${t("profile")}</h2><div class="card">${t("demoProfile")}</div><button class="back" onclick="home()">${t("back")}</button>`;
+}
+
+if(key==="language"){
+content.innerHTML=`
+<h2>🌐 ${t("languageTitle")}</h2>
+${[
+["uz","🇺🇿 O‘zbekcha"],["ru","🇷🇺 Русский"],
+["en","🇬🇧 English"],["tg","🇹🇯 Тоҷикӣ"],
+["kk","🇰🇿 Қазақша"],["ky","🇰🇬 Кыргызча"]
+].map(x=>`<button style="width:100%;margin:5px 0" onclick="setLang('${x[0]}')">${x[1]}</button>`).join("")}
+<button class="back" onclick="home()">${t("back")}</button>`;
+}
+
+if(key==="help"){
+content.innerHTML=`
+<h2>🛡️ ${t("help")}</h2>
+<div class="card">${t("helpText")}</div>
+<button onclick="openAdmin()">${t("admin")}</button>
+<button class="back" onclick="home()">${t("back")}</button>`;
+}
+}
+
+function setLang(value){
+lang=value;
+localStorage.setItem("egm_lang",value);
+updateMenu();
 home();
 }
 
-else if(key==="sell"){
+function sellForm(id){
+selectedGame=id;
+const game=games[id];
 content.innerHTML=`
-<h2>💰 Akkaunt sotish</h2>
-<div class="notice">Demo: e’lon haqiqiy joylanmaydi.</div>
-<input id="game" placeholder="PUBG yoki Free Fire">
-<input id="name" placeholder="Akkaunt nomi">
-<input id="price" placeholder="Narxi">
-<button onclick="alert('Demo: e’lon saqlanmadi')">
-E'LONNI KO‘RISH
-</button>
-<button class="back" onclick="home()">⬅ ORQAGA</button>`;
+<h2>${game.emoji} ${game.name}</h2>
+<div class="notice">${t("demo")}</div>
+<h3>${t("listing")}</h3>
+<input id="accountName" placeholder="${t("accountName")}">
+<input id="accountLevel" placeholder="${t("level")}">
+<textarea id="skins" placeholder="${t("skins")}"></textarea>
+<input id="accountPrice" type="number" min="0" placeholder="${t("price")}">
+<label>${t("photos")}</label>
+<input id="photos" type="file" accept="image/*" multiple>
+<p class="small">1–12 ta rasm tanlang. Rasmlar faqat ushbu sahifada ko‘rinadi.</p>
+<div id="photoPreview" class="preview"></div>
+<button onclick="previewListing()">${t("submit")}</button>
+<button class="back" onclick="show('sell')">${t("back")}</button>`;
+
+document.getElementById("photos").addEventListener("change",previewPhotos);
 }
 
-else if(key==="premium"){
-content.innerHTML=`
-<h2>⭐ PREMIUM</h2>
-<p>Tez orada.</p>
-<button onclick="home()">⬅ ORQAGA</button>`;
+function previewPhotos(){
+const files=[...document.getElementById("photos").files];
+const area=document.getElementById("photoPreview");
+if(files.length>12){
+alert(t("tooMany"));
+document.getElementById("photos").value="";
+area.innerHTML="";
+return;
+}
+area.innerHTML="";
+files.forEach(file=>{
+const img=document.createElement("img");
+img.src=URL.createObjectURL(file);
+area.appendChild(img);
+});
 }
 
-else if(key==="profile"){
-content.innerHTML=`
-<h2>👤 PROFIL</h2>
-<p>Demo profil.</p>
-<button onclick="home()">⬅ ORQAGA</button>`;
-}
+function previewListing(){
+const name=document.getElementById("accountName").value.trim();
+const level=document.getElementById("accountLevel").value.trim();
+const skins=document.getElementById("skins").value.trim();
+const price=document.getElementById("accountPrice").value.trim();
+const files=[...document.getElementById("photos").files];
 
-else if(key==="language"){
-content.innerHTML=`
-<h2>🌐 TIL</h2>
-<button onclick="alert('O‘zbek tili tanlandi')">🇺🇿 O‘zbekcha</button>
-<button class="back" onclick="home()">⬅ ORQAGA</button>`;
+if(!name||!level||!skins||!price||files.length===0){
+alert(t("required"));return;
 }
+if(files.length>12){alert(t("tooMany"));return;}
 
-else if(key==="help"){
 content.innerHTML=`
-<h2>🛡️ Yordam</h2>
-<button onclick="openAdmin()">✉️ ADMIN — @toliboevv</button>
-<button class="back" onclick="home()">⬅ ORQAGA</button>`;
-}
-}
-
-function catalog(game){
-content.innerHTML=`
-<h2>${game} katalogi</h2>
-<div class="notice">
-Namunaviy akkauntlar. Haqiqiy akkaunt emas.
-</div>
-
+<h2>✅ ${t("submit")}</h2>
+<div class="notice">${t("demo")} E’lon saqlanmadi va joylanmadi.</div>
 <div class="card">
-<h3>🎮 ${game} — DEMO 01</h3>
-<p>Namunaviy akkaunt</p>
+<h3>${games[selectedGame].name}</h3>
+<p><b>${t("accountName")}:</b> ${escapeHTML(name)}</p>
+<p><b>${t("level")}:</b> ${escapeHTML(level)}</p>
+<p><b>${t("skins")}:</b> ${escapeHTML(skins)}</p>
+<p class="price">${escapeHTML(price)} so‘m</p>
+<div class="preview" id="finalPhotos"></div>
+</div>
+<button class="back" onclick="home()">${t("home")}</button>
+<button class="back" onclick="sellForm('${selectedGame}')">${t("back")}</button>`;
+
+const area=document.getElementById("finalPhotos");
+files.forEach(file=>{
+const img=document.createElement("img");
+img.src=URL.createObjectURL(file);
+area.appendChild(img);
+});
+}
+
+function escapeHTML(value){
+return String(value).replace(/[&<>"']/g,c=>({
+"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+}[c]));
+}
+
+function catalog(id){
+const game=games[id];
+content.innerHTML=`
+<h2>${game.emoji} ${game.name} — ${t("catalog")}</h2>
+<div class="notice">${t("demo")}</div>
+<div class="card">
+<h3>${game.name} — DEMO 01</h3>
+<p>${t("sample")}</p>
 <p class="price">50 000 so‘m</p>
-<button onclick="checkout('${game}','DEMO 01')">
-SOTIB OLISH
-</button>
 </div>
-
 <div class="card">
-<h3>🎮 ${game} — DEMO 02</h3>
-<p>Namunaviy akkaunt</p>
+<h3>${game.name} — DEMO 02</h3>
+<p>${t("sample")}</p>
 <p class="price">80 000 so‘m</p>
-<button onclick="checkout('${game}','DEMO 02')">
-SOTIB OLISH
-</button>
 </div>
-
-<button class="back" onclick="home()">⬅ ORQAGA</button>`;
-}
-
-function checkout(game,item){
-content.innerHTML=`
-<h2>🧾 Demo buyurtma</h2>
-<div class="card">${game}<br>${item}</div>
-<div class="notice">
-Sinov rejimi. Haqiqiy pul olinmaydi.
-</div>
-<h3>To‘lov usulini tanlang:</h3>
-<button onclick="demoPay('Payme')">Payme DEMO</button>
-<button onclick="demoPay('Uzum')">Uzum DEMO</button>
-<button class="back" onclick="catalog('${game}')">
-⬅ ORQAGA
-</button>`;
-}
-
-function demoPay(method){
-content.innerHTML=`
-<h2>✅ Demo sinov</h2>
-<div class="card">
-To‘lov usuli: ${method}<br>
-Holat: DEMO<br>
-Haqiqiy pul olinmadi.
-</div>
-<button onclick="home()">BOSH SAHIFA</button>`;
+<button class="back" onclick="home()">${t("back")}</button>`;
 }
 
 function openAdmin(){
-if(window.Telegram && window.Telegram.WebApp){
-window.Telegram.WebApp.openTelegramLink('https://t.me/toliboevv');
+const url="https://t.me/toliboevv";
+if(window.Telegram&&window.Telegram.WebApp){
+window.Telegram.WebApp.openTelegramLink(url);
 }else{
-window.location.href='https://t.me/toliboevv';
+window.open(url,"_blank");
 }
 }
 
+updateMenu();
 home();
 </script>
-
 </body>
 </html>
- 
