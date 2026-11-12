@@ -8,124 +8,52 @@
 <title>ELITE GAME MARKET</title>
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;background:#090713;color:white;
- font-family:Arial,sans-serif;min-height:100vh;
- overflow-x:hidden;isolation:isolate
-}
-body:before{
- content:"";position:fixed;inset:-30%;z-index:-2;
- background:
- radial-gradient(circle at 20% 30%,#48247766,transparent 35%),
- radial-gradient(circle at 80% 60%,#211c5866,transparent 35%),
- radial-gradient(circle at 50% 90%,#8b42a833,transparent 35%);
- animation:glow 9s ease-in-out infinite alternate
-}
+body{margin:0;background:#090713;color:#fff;font-family:Arial,sans-serif;min-height:100vh;isolation:isolate}
+body:before{content:"";position:fixed;inset:-30%;z-index:-2;background:radial-gradient(circle at 20% 30%,#48247766,transparent 35%),radial-gradient(circle at 80% 60%,#211c5866,transparent 35%);animation:glow 9s ease-in-out infinite alternate}
 @keyframes glow{to{transform:translate(5%,4%) scale(1.12)}}
 #particles{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
-.particle{
- position:absolute;width:3px;height:3px;border-radius:50%;
- background:#b98cff;box-shadow:0 0 12px #a45cff;
- animation:float 9s linear infinite
-}
-@keyframes float{
- from{transform:translateY(105vh);opacity:0}
- 15%{opacity:.8}85%{opacity:.6}
- to{transform:translateY(-10vh);opacity:0}
-}
-header{
- padding:17px 16px;display:flex;align-items:center;
- justify-content:space-between;border-bottom:1px solid #ffffff14;
- position:relative;z-index:2;background:#0b0916c9;
- backdrop-filter:blur(12px)
-}
+.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:#b98cff;box-shadow:0 0 12px #a45cff;animation:float 9s linear infinite}
+@keyframes float{from{transform:translateY(105vh);opacity:0}20%{opacity:.8}to{transform:translateY(-10vh);opacity:0}}
+header{padding:16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff14;background:#0b0916}
 .brand{display:flex;align-items:center;gap:10px}
-.emblem{
- width:43px;height:43px;border-radius:13px;
- display:grid;place-items:center;
- background:linear-gradient(145deg,#9a61ff,#32145f);
- border:1px solid #d6b5ff66;
- box-shadow:0 0 18px #914aff55;
- font-size:23px;font-weight:900
-}
+.emblem{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#9a61ff,#32145f);border:1px solid #d6b5ff66;box-shadow:0 0 18px #914aff55;font-size:23px;font-weight:900}
 .brand b{font-size:14px;letter-spacing:1px}
 .brand small{display:block;color:#a58acb;font-size:9px;margin-top:4px}
-.lang{
- background:#171327;color:white;border:1px solid #51416f;
- border-radius:9px;padding:8px
-}
-main{position:relative;z-index:1;max-width:600px;margin:auto;padding:17px 14px 100px}
+.lang{background:#171327;color:white;border:1px solid #51416f;border-radius:9px;padding:8px}
+main{max-width:600px;margin:auto;padding:17px 14px 100px;position:relative}
 h2{font-size:19px;margin:20px 0 13px}
-.hero{
- border:1px solid #6846a5;border-radius:19px;padding:19px;
- background:linear-gradient(130deg,#291548,#11101f 70%);
- box-shadow:0 10px 35px #0008
-}
+.hero{border:1px solid #6846a5;border-radius:19px;padding:19px;background:linear-gradient(130deg,#291548,#11101f 70%);box-shadow:0 10px 35px #0008}
 .hero h1{font-size:23px;margin:0 0 8px}
 .hero p{color:#c2b6d6;font-size:13px;line-height:1.5}
 .tag{color:#c49aff;font-size:10px;letter-spacing:2px}
 .games{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.game{
- border:1px solid #413252;border-radius:16px;overflow:hidden;
- background:#141120;cursor:pointer;text-align:left;color:white;padding:0
-}
+.game{border:1px solid #413252;border-radius:16px;overflow:hidden;background:#141120;cursor:pointer;text-align:left;color:white;padding:0}
 .game img{width:100%;height:115px;object-fit:cover;background:#21182f}
 .game b{display:block;padding:12px;font-size:13px}
-.panel{
- background:#12101e;border:1px solid #332743;
- border-radius:16px;padding:15px;margin-top:14px
-}
-.btn{
- border:0;border-radius:11px;padding:12px 14px;
- background:linear-gradient(120deg,#9454ed,#6130a7);
- color:white;font-weight:bold;cursor:pointer
-}
+.panel{background:#12101e;border:1px solid #332743;border-radius:16px;padding:15px;margin-top:14px}
+.btn{border:0;border-radius:11px;padding:12px 14px;background:linear-gradient(120deg,#9454ed,#6130a7);color:white;font-weight:bold;cursor:pointer}
 .btn.secondary{background:#211a30;border:1px solid #594278}
 .btn.full{width:100%;margin-top:10px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-input,textarea,select{
- width:100%;background:#0b0a13;color:white;
- border:1px solid #443653;border-radius:10px;
- padding:12px;margin:6px 0;font-size:13px
-}
-textarea{min-height:75px;resize:vertical}
-.payment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.payment-option{
- height:59px;border:1px solid #393348;border-radius:12px;
- background:#fff;display:flex;align-items:center;
- justify-content:center;cursor:pointer;padding:8px
-}
-.payment-option img{width:100%;height:35px;object-fit:contain}
+input,textarea,select{width:100%;background:#0b0a13;color:white;border:1px solid #443653;border-radius:10px;padding:12px;margin:6px 0;font-size:13px}
+textarea{min-height:75px}
+.payment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.payment-option{height:62px;border:1px solid #393348;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:8px}
+.payment-option svg{width:100%;max-width:105px;height:38px}
 .payment-option.selected{outline:2px solid #a66cff;box-shadow:0 0 14px #a66cff77}
 .muted{font-size:11px;color:#a9a1b9;line-height:1.5}
 .stat{background:#1a1528;border:1px solid #403052;border-radius:12px;padding:13px}
 .stat small{color:#a89ab9}
 .stat strong{display:block;margin-top:8px;font-size:18px}
-.nav{
- position:fixed;z-index:5;bottom:0;left:0;right:0;
- background:#0d0b18f2;border-top:1px solid #ffffff18;
- display:flex;justify-content:space-around;padding:10px 2px;
- backdrop-filter:blur(14px)
-}
-.nav button{
- background:none;border:0;color:#a99bbd;font-size:10px;
- display:flex;flex-direction:column;align-items:center;gap:5px
-}
+.nav{position:fixed;z-index:5;bottom:0;left:0;right:0;background:#0d0b18f2;border-top:1px solid #ffffff18;display:flex;justify-content:space-around;padding:10px 2px}
+.nav button{background:none;border:0;color:#a99bbd;font-size:10px;display:flex;flex-direction:column;align-items:center;gap:5px}
 .nav button span{font-size:19px}
 .nav button.active{color:#c59bff}
 .page{display:none}
 .page.active{display:block}
-.loading{
- position:fixed;inset:0;z-index:10;background:#080610f5;
- display:none;align-items:center;justify-content:center;
- flex-direction:column;text-align:center
-}
+.loading{position:fixed;inset:0;z-index:10;background:#080610f5;display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center}
 .loading.show{display:flex}
-.loader{
- width:55px;height:55px;border:4px solid #332447;
- border-top-color:#b47aff;border-radius:50%;
- animation:spin .8s linear infinite;margin-bottom:20px
-}
+.loader{width:55px;height:55px;border:4px solid #332447;border-top-color:#b47aff;border-radius:50%;animation:spin .8s linear infinite;margin-bottom:20px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .history{padding:12px 0;border-bottom:1px solid #ffffff12;font-size:13px}
 .preview{width:70px;height:70px;object-fit:cover;border-radius:9px;margin:5px}
@@ -140,9 +68,7 @@ textarea{min-height:75px;resize:vertical}
   <div><b>ELITE GAME MARKET</b><small>GAMING • MARKET</small></div>
  </div>
  <select class="lang" id="language" onchange="changeLang(this.value)">
-  <option value="uz">UZ</option><option value="ru">RU</option>
-  <option value="en">EN</option><option value="tj">TJ</option>
-  <option value="kk">KZ</option><option value="ky">KG</option>
+  <option value="uz">UZ</option><option value="ru">RU</option><option value="en">EN</option><option value="tj">TJ</option><option value="kk">KZ</option><option value="ky">KG</option>
  </select>
 </header>
 
@@ -170,26 +96,35 @@ textarea{min-height:75px;resize:vertical}
  <h2>To‘lov usullari</h2>
  <div class="panel">
   <div class="payment-grid">
-   <button class="payment-option" onclick="choosePayment(this,'HUMO')">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Humo_logo.svg/320px-Humo_logo.svg.png" alt="HUMO">
+   <button class="payment-option" onclick="choosePayment(this,'HUMO')" aria-label="HUMO">
+    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+     <path d="M8 21 C8 7 26 4 34 15 C42 4 60 7 60 21 C60 35 42 37 34 26 C26 37 8 35 8 21Z" fill="none" stroke="#0876bd" stroke-width="5"/>
+     <path d="M34 15 C42 4 60 7 60 21" fill="none" stroke="#ed3347" stroke-width="5"/>
+     <text x="66" y="27" font-size="19" font-weight="bold" fill="#173d70">HUMO</text>
+    </svg>
    </button>
-   <button class="payment-option" onclick="choosePayment(this,'UZCARD')">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Uzcard_logo.svg/320px-Uzcard_logo.svg.png" alt="UZCARD">
+   <button class="payment-option" onclick="choosePayment(this,'UZCARD')" aria-label="UZCARD">
+    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+     <path d="M7 10 H30 L20 20 H-2Z" fill="#e52d3a" transform="translate(8 0)"/>
+     <path d="M8 20 H32 L22 30 H-2Z" fill="#1674bd" transform="translate(8 0)"/>
+     <text x="43" y="27" font-size="19" font-weight="bold" fill="#173d70">UZCARD</text>
+    </svg>
    </button>
-   <button class="payment-option" onclick="choosePayment(this,'VISA')">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/320px-Visa_Inc._logo.svg.png" alt="VISA">
+   <button class="payment-option" onclick="choosePayment(this,'VISA')" aria-label="VISA">
+    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+     <text x="12" y="30" font-size="31" font-weight="900" font-style="italic" fill="#173c82">VISA</text>
+     <path d="M75 32 L84 32 L96 7 L87 7Z" fill="#edaa24"/>
+    </svg>
    </button>
   </div>
-  <p class="muted" id="paymentStatus">To‘lov usulini tanlang. Hozircha demo rejim.</p>
+  <p class="muted" id="paymentStatus">To‘lov usulini tanlang. Demo rejim.</p>
  </div>
 </section>
 
 <section id="catalog" class="page">
  <h2>Katalog</h2>
  <div class="panel">
-  <select id="gameFilter">
-   <option>PUBG MOBILE</option><option>FREE FIRE</option>
-  </select>
+  <select id="gameFilter"><option>PUBG MOBILE</option><option>FREE FIRE</option></select>
   <p class="muted">Hozircha demo katalog. Haqiqiy e'lonlar serverga ulanmagan.</p>
   <div id="listingArea"></div>
  </div>
@@ -209,27 +144,21 @@ textarea{min-height:75px;resize:vertical}
   <div id="photoPreview"></div>
   <button class="btn full" onclick="previewListing()">E'lonni ko‘rib chiqish</button>
   <div id="sellResult"></div>
-  <p class="muted">Bu faqat brauzerdagi demo. E'lon serverga yuborilmaydi.</p>
+  <p class="muted">Faqat demo. E'lon serverga yuborilmaydi.</p>
  </div>
 </section>
 
 <section id="profile" class="page">
  <h2>Profil</h2>
  <div class="panel">
-  <div class="brand">
-   <div class="emblem">👤</div>
-   <div><b id="profileName">Mehmon</b><small>ELITE USER</small></div>
-  </div>
+  <div class="brand"><div class="emblem">👤</div><div><b id="profileName">Mehmon</b><small>ELITE USER</small></div></div>
   <div class="grid2" style="margin-top:15px">
    <div class="stat"><small>Demo balans</small><strong id="balance">0 so‘m</strong></div>
    <div class="stat"><small>Hisob holati</small><strong>Demo</strong></div>
   </div>
-  <h2>Xaridlar tarixi</h2>
-  <div id="purchases" class="muted">Hozircha xarid yo‘q.</div>
-  <h2>Sotuvlar tarixi</h2>
-  <div id="sales" class="muted">Hozircha sotuv yo‘q.</div>
-  <h2>Balans tarixi</h2>
-  <div id="balanceHistory" class="muted">Hozircha harakat yo‘q.</div>
+  <h2>Xaridlar tarixi</h2><div id="purchases" class="muted">Hozircha xarid yo‘q.</div>
+  <h2>Sotuvlar tarixi</h2><div id="sales" class="muted">Hozircha sotuv yo‘q.</div>
+  <h2>Balans tarixi</h2><div id="balanceHistory" class="muted">Hozircha harakat yo‘q.</div>
  </div>
 </section>
 
@@ -250,9 +179,7 @@ textarea{min-height:75px;resize:vertical}
  <h2>Yordam</h2>
  <div class="panel">
   <p>Taklif va savollar uchun admin bilan bog‘laning.</p>
-  <a href="https://t.me/toliboevv" target="_blank">
-   <button class="btn full">Telegram orqali bog‘lanish</button>
-  </a>
+  <a href="https://t.me/toliboevv" target="_blank"><button class="btn full">Telegram orqali bog‘lanish</button></a>
  </div>
 </section>
 </main>
@@ -267,9 +194,8 @@ textarea{min-height:75px;resize:vertical}
 </nav>
 
 <div class="loading" id="loading">
- <div class="loader"></div>
- <h2 id="loadingTitle">ELITE GAME MARKET</h2>
- <p class="muted">O‘yin bo‘limi ochilmoqda...</p>
+ <div class="loader"></div><h2 id="loadingTitle">ELITE GAME MARKET</h2>
+ <p class="muted">Bo‘lim ochilmoqda...</p>
 </div>
 
 <script>
@@ -282,7 +208,6 @@ for(let i=0;i<35;i++){
  p.style.animationDuration=(6+Math.random()*8)+"s";
  particleBox.appendChild(p);
 }
-
 function showPage(id,btn){
  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
  document.getElementById(id).classList.add("active");
@@ -306,7 +231,7 @@ function choosePayment(btn,name){
  document.querySelectorAll(".payment-option").forEach(x=>x.classList.remove("selected"));
  btn.classList.add("selected");
  selectedPayment=name;
- document.getElementById("paymentStatus").textContent=name+" tanlandi. Demo rejim — haqiqiy to‘lov amalga oshmaydi.";
+ document.getElementById("paymentStatus").textContent=name+" tanlandi. Demo rejim — haqiqiy to‘lov yo‘q.";
 }
 function previewListing(){
  const title=document.getElementById("sellTitle").value.trim();
@@ -314,7 +239,7 @@ function previewListing(){
  if(!title||!price){alert("E'lon nomi va demo narxini kiriting.");return}
  const game=document.getElementById("sellGame").value;
  document.getElementById("sellResult").innerHTML=
- `<div class="panel"><b>${escapeHTML(title)}</b><p>${escapeHTML(game)}</p><b>${Number(price).toLocaleString()} so‘m</b><p class="muted">Demo e'lon ko‘rinishi. Saytni yopganda saqlanmasligi mumkin.</p></div>`;
+ `<div class="panel"><b>${escapeHTML(title)}</b><p>${escapeHTML(game)}</p><b>${Number(price).toLocaleString()} so‘m</b><p class="muted">Demo e'lon ko‘rinishi. Serverga saqlanmaydi.</p></div>`;
 }
 function escapeHTML(s){
  return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -325,22 +250,11 @@ document.getElementById("sellPhotos").addEventListener("change",function(){
  [...this.files].slice(0,12).forEach(file=>{
   if(!file.type.startsWith("image/"))return;
   const img=document.createElement("img");
-  img.className="preview";
-  img.src=URL.createObjectURL(file);
+  img.className="preview";img.src=URL.createObjectURL(file);
   box.appendChild(img);
  });
 });
-function premiumDemo(months){
- alert(months+" oylik Premium — demo. Haqiqiy xarid mavjud emas.");
-}
-const translations={
- uz:{},
- ru:{},
- en:{},
- tj:{},
- kk:{},
- ky:{}
-};
+function premiumDemo(months){alert(months+" oylik Premium — demo. Haqiqiy xarid mavjud emas.");}
 function changeLang(lang){
  localStorage.setItem("egm_lang",lang);
  if(lang!=="uz")alert("Til tanlandi. Ayrim bo‘limlar hozircha o‘zbek tilida qoladi.");
