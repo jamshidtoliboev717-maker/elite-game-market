@@ -1,39 +1,44 @@
 
-<!
 <!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090d16">
+<meta name="theme-color" content="#0b101b">
 <title>ELITE GAME MARKET</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <style>
 *{box-sizing:border-box}
+
 body{
 margin:0;
-background:#090d16;
+min-height:100vh;
+background:radial-gradient(circle at 50% 0,#25203b 0,#0b101b 48%,#070a12 100%);
 color:white;
 font-family:Arial,sans-serif;
 }
+
 header{
 text-align:center;
-padding:25px 10px;
-background:#151b29;
+padding:28px 10px;
+background:linear-gradient(180deg,#211c32,#111522);
 border-bottom:2px solid #d5a52b;
 }
+
 h1{color:#e8bd50;margin:0;font-size:25px}
-header p{color:#aaa;font-size:12px}
+header p{color:#aaa;font-size:12px;margin-bottom:0}
+
 nav{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:10px;
 padding:15px;
 }
+
 button{
 border:1px solid #b98b2c;
-background:#171f30;
+background:linear-gradient(145deg,#20243a,#111827);
 color:#f4ce6b;
 padding:13px;
 border-radius:10px;
@@ -41,9 +46,12 @@ font-weight:bold;
 font-size:14px;
 cursor:pointer;
 }
+
 button:active{opacity:.7}
+
 #content{padding:15px}
 h2{color:#f4ce6b}
+
 .notice{
 background:#382c14;
 color:#ffdc82;
@@ -51,13 +59,16 @@ padding:12px;
 border-radius:9px;
 font-size:12px;
 margin-bottom:15px;
+border:1px solid #8c6925;
 }
+
 .game-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:12px;
 margin:15px 0;
 }
+
 .game-card{
 padding:0;
 overflow:hidden;
@@ -65,37 +76,45 @@ border-radius:14px;
 background:#171f30;
 color:#f4ce6b;
 width:100%;
+border:1px solid #d5a52b;
+box-shadow:0 5px 18px #0008;
 }
+
 .game-card img{
 width:100%;
 height:190px;
 object-fit:cover;
 display:block;
 }
+
 .game-card span{
 display:block;
 padding:14px 5px;
 font-size:14px;
 }
+
 .card{
-background:#151d2c;
-border:1px solid #333d50;
+background:linear-gradient(145deg,#1c2335,#101725);
+border:1px solid #66512b;
 padding:15px;
 border-radius:12px;
 margin:12px 0;
 }
+
 .price{
 color:#f4ce6b;
 font-size:20px;
 font-weight:bold;
 }
+
 .back{margin-top:12px;width:100%}
+
 input{
 width:100%;
 padding:12px;
 margin:7px 0;
 border-radius:8px;
-border:1px solid #555;
+border:1px solid #8c6925;
 background:#101827;
 color:white;
 }
@@ -118,49 +137,55 @@ color:white;
 <button onclick="show('help')">🛡️ YORDAM</button>
 </nav>
 
-<div id="content">
-<div class="notice">DEMO REJIMI: haqiqiy pul olinmaydi.</div>
-<h2>🎮 O‘yin turini tanlang</h2>
-<div class="game-grid">
-<button class="game-card" onclick="catalog('PUBG MOBILE')">
-<img src="https://placehold.co/500x650/172238/ffffff?text=PUBG+MOBILE" alt="PUBG">
-<span>🎮 PUBG MOBILE</span>
-</button>
-<button class="game-card" onclick="catalog('FREE FIRE')">
-<img src="https://placehold.co/500x650/302018/ffffff?text=FREE+FIRE" alt="Free Fire">
-<span>🔥 FREE FIRE</span>
-</button>
-</div>
-</div>
+<div id="content"></div>
 
 <script>
 const content=document.getElementById("content");
 
+const games={
+pubg:{
+name:"PUBG MOBILE",
+image:"https://images.igdb.com/sc69jb.jpg"
+},
+ff:{
+name:"FREE FIRE",
+image:"https://cdn.wildflamestudio.com/common/web_event/official2.ff.garena.all/202210/82fe305f7dbb9f25e68996f8f719e576.jpg"
+}
+};
+
 function home(){
 content.innerHTML=`
-<div class="notice">DEMO REJIMI: haqiqiy pul olinmaydi.</div>
+<div class="notice">
+DEMO REJIMI: hozircha haqiqiy pul olinmaydi.
+</div>
 <h2>🎮 O‘yin turini tanlang</h2>
-${gameButtons()}`;
+${gameButtons()}
+`;
 }
 
 function gameButtons(){
 return `
 <div class="game-grid">
 <button class="game-card" onclick="catalog('PUBG MOBILE')">
-<img src="https://placehold.co/500x650/172238/ffffff?text=PUBG+MOBILE" alt="PUBG">
+<img src="${games.pubg.image}" alt="PUBG MOBILE"
+onerror="this.style.display='none'">
 <span>🎮 PUBG MOBILE</span>
 </button>
+
 <button class="game-card" onclick="catalog('FREE FIRE')">
-<img src="https://placehold.co/500x650/302018/ffffff?text=FREE+FIRE" alt="Free Fire">
+<img src="${games.ff.image}" alt="FREE FIRE"
+onerror="this.style.display='none'">
 <span>🔥 FREE FIRE</span>
 </button>
 </div>`;
 }
 
 function show(key){
+
 if(key==="buy"){
 home();
 }
+
 else if(key==="sell"){
 content.innerHTML=`
 <h2>💰 Akkaunt sotish</h2>
@@ -168,18 +193,33 @@ content.innerHTML=`
 <input id="game" placeholder="PUBG yoki Free Fire">
 <input id="name" placeholder="Akkaunt nomi">
 <input id="price" placeholder="Narxi">
-<button onclick="alert('Demo: e’lon saqlanmadi')">E'LONNI KO‘RISH</button>
+<button onclick="alert('Demo: e’lon saqlanmadi')">
+E'LONNI KO‘RISH
+</button>
 <button class="back" onclick="home()">⬅ ORQAGA</button>`;
 }
+
 else if(key==="premium"){
-content.innerHTML=`<h2>⭐ PREMIUM</h2><p>Tez orada.</p><button onclick="home()">⬅ ORQAGA</button>`;
+content.innerHTML=`
+<h2>⭐ PREMIUM</h2>
+<p>Tez orada.</p>
+<button onclick="home()">⬅ ORQAGA</button>`;
 }
+
 else if(key==="profile"){
-content.innerHTML=`<h2>👤 PROFIL</h2><p>Demo profil.</p><button onclick="home()">⬅ ORQAGA</button>`;
+content.innerHTML=`
+<h2>👤 PROFIL</h2>
+<p>Demo profil.</p>
+<button onclick="home()">⬅ ORQAGA</button>`;
 }
+
 else if(key==="language"){
-content.innerHTML=`<h2>🌐 TIL</h2><button onclick="alert('O‘zbek tili tanlandi')">🇺🇿 O‘zbekcha</button><button class="back" onclick="home()">⬅ ORQAGA</button>`;
+content.innerHTML=`
+<h2>🌐 TIL</h2>
+<button onclick="alert('O‘zbek tili tanlandi')">🇺🇿 O‘zbekcha</button>
+<button class="back" onclick="home()">⬅ ORQAGA</button>`;
 }
+
 else if(key==="help"){
 content.innerHTML=`
 <h2>🛡️ Yordam</h2>
@@ -191,19 +231,28 @@ content.innerHTML=`
 function catalog(game){
 content.innerHTML=`
 <h2>${game} katalogi</h2>
-<div class="notice">Namunaviy akkauntlar. Haqiqiy akkaunt emas.</div>
+<div class="notice">
+Namunaviy akkauntlar. Haqiqiy akkaunt emas.
+</div>
+
 <div class="card">
 <h3>🎮 ${game} — DEMO 01</h3>
 <p>Namunaviy akkaunt</p>
 <p class="price">50 000 so‘m</p>
-<button onclick="checkout('${game}','DEMO 01')">SOTIB OLISH</button>
+<button onclick="checkout('${game}','DEMO 01')">
+SOTIB OLISH
+</button>
 </div>
+
 <div class="card">
 <h3>🎮 ${game} — DEMO 02</h3>
 <p>Namunaviy akkaunt</p>
 <p class="price">80 000 so‘m</p>
-<button onclick="checkout('${game}','DEMO 02')">SOTIB OLISH</button>
+<button onclick="checkout('${game}','DEMO 02')">
+SOTIB OLISH
+</button>
 </div>
+
 <button class="back" onclick="home()">⬅ ORQAGA</button>`;
 }
 
@@ -211,11 +260,15 @@ function checkout(game,item){
 content.innerHTML=`
 <h2>🧾 Demo buyurtma</h2>
 <div class="card">${game}<br>${item}</div>
-<div class="notice">Sinov rejimi. Haqiqiy pul olinmaydi.</div>
+<div class="notice">
+Sinov rejimi. Haqiqiy pul olinmaydi.
+</div>
 <h3>To‘lov usulini tanlang:</h3>
 <button onclick="demoPay('Payme')">Payme DEMO</button>
 <button onclick="demoPay('Uzum')">Uzum DEMO</button>
-<button class="back" onclick="catalog('${game}')">⬅ ORQAGA</button>`;
+<button class="back" onclick="catalog('${game}')">
+⬅ ORQAGA
+</button>`;
 }
 
 function demoPay(method){
@@ -236,7 +289,10 @@ window.Telegram.WebApp.openTelegramLink('https://t.me/toliboevv');
 window.location.href='https://t.me/toliboevv';
 }
 }
+
+home();
 </script>
+
 </body>
 </html>
-
+ 
