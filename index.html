@@ -76,23 +76,19 @@ h2{font-size:21px;margin:25px 0 14px}
  background:linear-gradient(90deg,#7026bb,#a13ce0);
  color:white;font-size:16px;font-weight:1000
 }
-
-/* Shaffof to'lov logotiplari */
 .cards{
  display:flex;align-items:center;
- justify-content:space-around;gap:22px;
- padding:15px 5px
+ justify-content:space-around;gap:22px;padding:15px 5px
 }
 .bank{
  width:30%;height:65px;
  display:flex;align-items:center;justify-content:center;
- background:transparent;border:0;padding:0;
+ background:transparent;border:0;padding:0
 }
 .bank img{
  max-width:100%;max-height:52px;
  object-fit:contain;display:block
 }
-
 .note{color:#a99ab8;font-size:12px;line-height:1.5}
 input,textarea,select:not(.lang){
  width:100%;padding:14px;margin:7px 0;
@@ -152,6 +148,78 @@ footer{
  text-align:center;color:#887b98;
  font-size:12px;margin:30px 0 110px
 }
+
+/* PREMIUM ANIMATSIYALARI */
+.premium-hero{
+ position:relative;overflow:hidden;
+ padding:22px 15px;border-radius:20px;
+ border:1px solid #b77aff;
+ background:linear-gradient(135deg,#35135c,#171025,#25103e);
+ text-align:center;
+ box-shadow:0 0 25px #a43cff33
+}
+.premium-hero:before{
+ content:"";position:absolute;
+ width:180px;height:180px;border-radius:50%;
+ background:#b34cff22;filter:blur(25px);
+ top:-80px;right:-50px
+}
+.premium-star{
+ display:inline-block;font-size:54px;
+ animation:starGlow 2s ease-in-out infinite
+}
+@keyframes starGlow{
+ 0%,100%{transform:scale(1) rotate(-8deg);filter:drop-shadow(0 0 5px #c77aff)}
+ 50%{transform:scale(1.18) rotate(8deg);filter:drop-shadow(0 0 20px #e2aaff)}
+}
+.premium-badge{
+ display:inline-flex;align-items:center;gap:7px;
+ padding:9px 16px;border-radius:30px;
+ background:linear-gradient(90deg,#8b35d1,#c078ff);
+ color:white;font-weight:1000;
+ box-shadow:0 0 18px #b65cff66;
+ animation:badgePulse 2s infinite
+}
+@keyframes badgePulse{
+ 50%{box-shadow:0 0 27px #d39aff}
+}
+.sticker-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:12px;margin-top:17px
+}
+.sticker{
+ min-height:105px;border:1px solid #74449a;
+ border-radius:17px;background:#211431;
+ display:flex;flex-direction:column;
+ align-items:center;justify-content:center;
+ gap:5px;overflow:hidden
+}
+.sticker-icon{
+ font-size:39px;
+ animation:stickerFloat 2.5s ease-in-out infinite
+}
+.sticker:nth-child(2) .sticker-icon{animation-delay:.3s}
+.sticker:nth-child(3) .sticker-icon{animation-delay:.6s}
+.sticker:nth-child(4) .sticker-icon{animation-delay:.9s}
+.sticker:nth-child(5) .sticker-icon{animation-delay:1.2s}
+.sticker:nth-child(6) .sticker-icon{animation-delay:1.5s}
+@keyframes stickerFloat{
+ 0%,100%{transform:translateY(0) rotate(-5deg)}
+ 50%{transform:translateY(-9px) rotate(5deg)}
+}
+.sticker small{
+ color:#d9b9f5;font-size:11px;font-weight:bold
+}
+.premium-plan{
+ border:1px solid #8752b4;
+ background:linear-gradient(110deg,#2b1741,#171222);
+ border-radius:15px;padding:15px;margin:10px 0;
+ display:flex;align-items:center;justify-content:space-between;
+ gap:10px
+}
+.premium-plan strong{color:#e0baff}
+.premium-plan span{color:#c8a0eb}
+
 @media(max-width:420px){
  .wrap{padding:12px}
  h1{font-size:22px}
@@ -159,6 +227,8 @@ footer{
  .bank{height:55px}
  .bottom button{font-size:11px}
  .action{font-size:14px}
+ .sticker-grid{gap:8px}
+ .sticker{min-height:95px}
 }
 </style>
 </head>
@@ -209,17 +279,10 @@ footer{
  </div>
 
  <h2 data-i="payments">💳 TO‘LOV KARTALARI</h2>
-
  <div class="cards">
-  <div class="bank">
-   <img src="humo.png" alt="HUMO">
-  </div>
-  <div class="bank">
-   <img src="uzcard.png" alt="UZCARD">
-  </div>
-  <div class="bank">
-   <img src="visa.png" alt="VISA">
-  </div>
+  <div class="bank"><img src="humo.png" alt="HUMO"></div>
+  <div class="bank"><img src="uzcard.png" alt="UZCARD"></div>
+  <div class="bank"><img src="visa.png" alt="VISA"></div>
  </div>
 
  <p class="note" data-i="demo">
@@ -245,32 +308,92 @@ footer{
    <option>PUBG MOBILE</option>
    <option>FREE FIRE</option>
   </select>
-
   <input id="title" data-ph="titleph" placeholder="E'lon nomi">
   <textarea id="desc" data-ph="descph" placeholder="Tavsif" rows="3"></textarea>
   <input id="price" type="number" data-ph="priceph" placeholder="Narx (demo)">
-
   <button class="primary" onclick="addListing()" data-i="preview">
    Demo e'lonni ko‘rsatish
   </button>
-
   <p class="note" data-i="safety">
    Faqat demo e'lonlar. Hech kimning akkaunt paroli yoki maxfiy ma'lumotini kiritmang.
   </p>
  </div>
 </section>
 
+<!-- PREMIUM BO'LIMI -->
 <section id="premium" class="page">
  <h2 data-i="premium">💎 Telegram Premium</h2>
- <div class="panel">
-  <p data-i="premiumtext">Premium xizmatlari haqida ma'lumot.</p>
-  <div class="listing">⭐ 1 month — DEMO</div>
-  <div class="listing">⭐ 3 months — DEMO</div>
-  <div class="listing">⭐ 12 months — DEMO</div>
-  <p class="note" data-i="demoOnly">
-   Bu bo‘lim faqat namuna, haqiqiy xarid ishlamaydi.
+
+ <div class="premium-hero">
+  <div class="premium-star">⭐</div>
+  <br>
+  <div class="premium-badge">
+   💎 TELEGRAM PREMIUM ✓
+  </div>
+  <h2 style="margin:15px 0 7px">PREMIUM STYLE</h2>
+  <p style="color:#d5b8ed">
+   Maxsus stikerlar va chiroyli animatsiyalar
   </p>
  </div>
+
+ <h2>✨ PREMIUM STIKERLAR</h2>
+
+ <div class="sticker-grid">
+  <div class="sticker">
+   <div class="sticker-icon">💎</div>
+   <small>DIAMOND</small>
+  </div>
+  <div class="sticker">
+   <div class="sticker-icon">⭐</div>
+   <small>PREMIUM STAR</small>
+  </div>
+  <div class="sticker">
+   <div class="sticker-icon">👑</div>
+   <small>ROYAL</small>
+  </div>
+  <div class="sticker">
+   <div class="sticker-icon">🔥</div>
+   <small>FIRE</small>
+  </div>
+  <div class="sticker">
+   <div class="sticker-icon">🚀</div>
+   <small>ROCKET</small>
+  </div>
+  <div class="sticker">
+   <div class="sticker-icon">💜</div>
+   <small>ELITE</small>
+  </div>
+ </div>
+
+ <h2>🎁 PREMIUM MUDDATLARI</h2>
+
+ <div class="premium-plan">
+  <div>
+   <strong>⭐ 1 MONTH</strong><br>
+   <span>1 oylik Premium</span>
+  </div>
+  <b>DEMO</b>
+ </div>
+
+ <div class="premium-plan">
+  <div>
+   <strong>💎 3 MONTHS</strong><br>
+   <span>3 oylik Premium</span>
+  </div>
+  <b>DEMO</b>
+ </div>
+
+ <div class="premium-plan">
+  <div>
+   <strong>👑 12 MONTHS</strong><br>
+   <span>12 oylik Premium</span>
+  </div>
+  <b>DEMO</b>
+ </div>
+
+ <p class="note" data-i="demoOnly">
+  Bu bo‘lim faqat namuna, haqiqiy xarid ishlamaydi.
+ </p>
 </section>
 
 <section id="profile" class="page">
@@ -586,4 +709,5 @@ autoLanguage();
 </script>
 </body>
 </html>
+
 
